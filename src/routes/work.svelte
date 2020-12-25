@@ -1,3 +1,3 @@
 <svelte:head>
-	<title>Work | Illinois Labs</title>
+  <title>Work | Illinois Labs</title>
 </svelte:head>
