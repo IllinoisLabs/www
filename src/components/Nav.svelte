@@ -3,10 +3,27 @@
 </script>
 
 <style>
-	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
+	div.wrap {
+		position: fixed;
+		background: none;
+		width: 100%;
+		/* border-bottom: 1px solid rgba(0,0,0,0.1); */
 		font-weight: 300;
-		padding: 0 1em;
+		box-sizing: border-box;
+		top: 0;
+		z-index: 999;
+		display: block;
+	}
+	nav {
+		display: flex;
+		margin: 2em auto 0;
+		max-width: 1300px;
+		width: 95%;
+		justify-content: space-between;
+		background-color: white;
+		border-radius: 0.5em;
+		padding: 0 2em;
+		box-sizing: border-box;
 	}
 
 	ul {
@@ -22,39 +39,74 @@
 	}
 
 	li {
-		display: block;
-		float: left;
+		display: inline-block;
 	}
 
 	[aria-current] {
 		position: relative;
-		display: inline-block;
+		background-color: var(--blue);
+		color: white;
 	}
-
+/* 
 	[aria-current]::after {
 		position: absolute;
 		content: '';
 		width: calc(100% - 1em);
 		height: 2px;
-		background-color: rgb(255,62,0);
+		background-color: var(--blue);
 		display: block;
 		bottom: -1px;
-	}
+	} */
 
 	a {
 		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
+		height: 4em;
+		display: flex;
+		padding: 0;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
 	}
+
+	li > a {
+		padding: 2em;
+	}
+
+	li:nth-child(1) > a {
+		padding-left: 0;
+	}
+
+	ul:last-child li:last-child > a {
+		padding-right: 0;
+	}
+
+	/* a img {
+		display: block;
+		height: 64px;
+	} */
+
+	li.cta a div {
+		padding: 0.5em 2em;
+		background-color: var(--blue);
+		color: white;
+		border-radius: 2em;
+	}
+
 </style>
 
-<nav>
-	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
-
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
-	</ul>
-</nav>
+<div class="wrap">
+	<nav>
+		<ul>
+			<li><a href="."><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a></li>
+			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
+			<li><a aria-current="{segment === 'work' ? 'page' : undefined}" href="work">Work</a></li>
+			<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">About</a></li>
+		</ul>
+		<ul>	
+			<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
+				 the blog data when we hover over the link or tap it on a touchscreen -->
+			<!-- <li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li> -->
+			<li class="cta"><a href="join"><div>Join Us</div></a></li>
+		</ul>
+	</nav>
+</div>

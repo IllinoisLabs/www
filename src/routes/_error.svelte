@@ -13,11 +13,14 @@
 	h1 {
 		font-size: 2.8em;
 		font-weight: 700;
-		margin: 0 0 0.5em 0;
 	}
 
-	p {
-		margin: 1em auto;
+	.wrap {
+		width: 100%;
+		height: calc(100vh - 20em);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	@media (min-width: 480px) {
@@ -31,10 +34,17 @@
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<div class="wrap">
+	<div>
+		<h1>{status}</h1>
 
-<p>{error.message}</p>
+		<p>{error.message}</p>
 
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
+		{#if dev && error.stack}
+			<pre>{error.stack}</pre>
+		{/if}
+
+		<a href="/">Back to Home &rarr;</a>
+
+	</div>
+</div>
