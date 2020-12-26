@@ -10,9 +10,11 @@
     "validate": "svelte-check --ignore src/node_modules/@sapper"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "compression": "^1.7.1",
     "polka": "next",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "svelte-awesome": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

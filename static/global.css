@@ -10,15 +10,18 @@
   --dark: #041633;
   --text: #04163395;
 
+  /* text */
+  --font-stack: 'Space Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+
   /* Page Sections */
   --br: 0.75em;
-  --mg: 0.75em;
+  --mg: 1.25em;
 }
 
 body {
   margin: 0;
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans,
-    Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-stack);
   font-size: 14px;
   line-height: 1.5;
   color: var(--text);
@@ -36,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Krona One';
+  font-family: 'Krona One', sans-serif;
   margin: 0 0 0.5em 0;
   font-weight: 600;
   line-height: 1.2;
@@ -59,8 +62,39 @@ code {
   border-radius: 2px;
 }
 
+a.button {
+  padding: 0.5em 1.25em 0.5em 1.5em;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 2em;
+  text-decoration: none;
+  box-sizing: border-box;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.014), 0 6.7px 5.3px rgba(0, 0, 0, 0.02), 0 12.5px 10px rgba(0, 0, 0, 0.025),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.03), 0 41.8px 33.4px rgba(0, 0, 0, 0.036), 0 100px 80px rgba(0, 0, 0, 0.05);
+}
+
+a.button.secondary {
+  background-color: inherit;
+  color: var(--blue);
+  box-shadow: none;
+}
+
+a.button::after {
+  content: '→';
+  padding-left: 0.35em;
+  padding-right: 0.35em;
+  transition: padding 0.2s ease-in-out;
+}
+
+a.button:hover::after {
+  content: '→';
+  padding-left: 0.7em;
+  padding-right: 0;
+}
+
 @media (min-width: 400px) {
   body {
     font-size: 16px;
+    line-height: 2;
   }
 }

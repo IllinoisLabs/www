@@ -1,29 +1,49 @@
 <script lang="ts">
   export let segment: string;
+
+  // current scroll position, inner height
+  let y, h;
+  //
+  let isOpen = false;
 </script>
 
 <style>
   div.wrap {
-    position: fixed;
+    position: absolute;
     background: none;
     width: 100%;
-    /* border-bottom: 1px solid rgba(0,0,0,0.1); */
     font-weight: 300;
     box-sizing: border-box;
     top: 0;
     z-index: 999;
     display: block;
+    padding-top: 2em;
+    transition: padding 0.25s ease-in-out;
   }
+
+  div.wrap.scrolled {
+    position: fixed;
+    padding-top: 1.5em;
+  }
+
   nav {
     display: flex;
-    margin: 2em auto 0;
+    margin: 0 auto;
     max-width: 1300px;
     width: 95%;
     justify-content: space-between;
-    background-color: white;
+    background-color: inherit;
+    box-shadow: none;
     border-radius: 0.5em;
     padding: 0 2em;
     box-sizing: border-box;
+  }
+
+  nav.scrolled {
+    background-color: white;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.014), 0 6.7px 5.3px rgba(0, 0, 0, 0.02),
+      0 12.5px 10px rgba(0, 0, 0, 0.025), 0 22.3px 17.9px rgba(0, 0, 0, 0.03), 0 41.8px 33.4px rgba(0, 0, 0, 0.036),
+      0 100px 80px rgba(0, 0, 0, 0.05);
   }
 
   ul {
@@ -31,32 +51,22 @@
     padding: 0;
   }
 
-  /* clearfix */
-  ul::after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-
   li {
     display: inline-block;
   }
 
-  [aria-current] {
+  nav.scrolled a[aria-current] {
     position: relative;
     background-color: var(--blue);
     color: white;
   }
-  /* 
-	[aria-current]::after {
-		position: absolute;
-		content: '';
-		width: calc(100% - 1em);
-		height: 2px;
-		background-color: var(--blue);
-		display: block;
-		bottom: -1px;
-	} */
+
+  a[aria-current] {
+    position: relative;
+    background: none;
+    font-weight: 600;
+    color: var(--blue);
+  }
 
   a {
     text-decoration: none;
@@ -66,6 +76,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    font-weight: 600;
   }
 
   li > a {
@@ -76,38 +87,118 @@
     padding-left: 0;
   }
 
-  ul:last-child li:last-child > a {
-    padding-right: 0;
+  ul:nth-child(2) li:last-child > a {
+    padding: 0;
   }
 
-  /* a img {
-		display: block;
-		height: 64px;
-	} */
-
   li.cta a div {
-    padding: 0.5em 2em;
+    padding: 0.25em 2em;
     background-color: var(--blue);
     color: white;
     border-radius: 2em;
   }
+
+  /* mobile nav */
+
+  .mobile {
+    position: relative;
+    display: none;
+  }
+
+  .mobile button {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  @media only screen and (max-width: 795px) {
+    .mobile {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    #mobile-menu {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding-top: 6em;
+      background-color: white;
+      z-index: 850;
+    }
+
+    #mobile-menu > li {
+      display: block;
+    }
+
+    #mobile-meun > li a {
+      justify-content: flex-start;
+    }
+
+    nav > ul {
+      display: none;
+    }
+
+    .open-mm nav.scrolled {
+      background-color: white;
+      box-shadow: none;
+    }
+
+    .open-mm div.wrap.scrolled,
+    .open-mm div.wrap {
+      position: fixed;
+      padding-top: 2em;
+    }
+
+    li > a {
+      padding: 0;
+    }
+  }
 </style>
 
-<div class="wrap">
-  <nav>
-    <ul>
-      <li><a href="."><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a></li>
+<svelte:window bind:scrollY={y} bind:innerHeight={h} />
+
+<span class={isOpen ? 'open-mm' : ''}>
+  <div class={y > h ? 'scrolled wrap' : 'wrap'}>
+    <nav class={y > h ? 'scrolled' : ''}>
+      <ul>
+        <li><a href="."><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a></li>
+        <!-- </ul>
+    <ul> -->
+        <li><a aria-current={segment === undefined ? 'page' : undefined} href=".">Home</a></li>
+        <li><a aria-current={segment === 'work' ? 'page' : undefined} href="work">Work</a></li>
+        <li><a aria-current={segment === 'about' ? 'page' : undefined} href="about">About</a></li>
+      </ul>
+      <ul>
+        <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
+				 the blog data when we hover over the link or tap it on a touchscreen -->
+        <!-- <li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li> -->
+        <li class="cta">
+          <a href="join"><div>Join Us</div></a>
+        </li>
+      </ul>
+
+      <ul class="mobile">
+        <a href="."><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a>
+        <button on:click={() => (isOpen = !isOpen)}>
+          {#if isOpen}&times;{:else}☰{/if}
+        </button>
+      </ul>
+    </nav>
+  </div>
+
+  {#if isOpen}
+    <ul id="mobile-menu" on:click={() => (isOpen = false)}>
       <li><a aria-current={segment === undefined ? 'page' : undefined} href=".">Home</a></li>
       <li><a aria-current={segment === 'work' ? 'page' : undefined} href="work">Work</a></li>
       <li><a aria-current={segment === 'about' ? 'page' : undefined} href="about">About</a></li>
-    </ul>
-    <ul>
-      <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-				 the blog data when we hover over the link or tap it on a touchscreen -->
-      <!-- <li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li> -->
       <li class="cta">
         <a href="join"><div>Join Us</div></a>
       </li>
     </ul>
-  </nav>
-</div>
+  {/if}
+</span>

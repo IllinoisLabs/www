@@ -8,10 +8,11 @@
     display: flex;
     align-items: center;
     max-width: 1300px;
+    margin: 0 auto;
     width: 95%;
     padding: 0 2em;
     box-sizing: border-box;
   }
 </style>
 
-<footer class="container">&copy; {year} Illinois Labs.</footer>
+<footer>&copy; {year} Illinois Labs.</footer>

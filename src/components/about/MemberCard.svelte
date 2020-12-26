@@ -1,6 +1,12 @@
 <script lang="ts">
   import type { member } from '../../utils/types';
 
+  // icons
+  import Icon from 'svelte-awesome/components/Icon.svelte';
+  import { globe } from 'svelte-awesome/icons';
+  import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+
+  // props
   export let member: member;
 </script>
 
@@ -27,6 +33,7 @@
 
   h3 {
     margin: 0;
+    font-family: var(--font-stack);
   }
 
   ul {
@@ -35,13 +42,22 @@
     list-style: none;
   }
 
+  ul > li {
+    line-height: 1.75;
+  }
+
   ul.inline > li {
     display: inline;
+    margin-right: 0.15em;
+  }
+
+  ul.inline > li:hover a {
+    color: var(--blue);
   }
 </style>
 
 <div class="wrap">
-  <div class="image-wrapper"><img src="https://via.placeholder.com/150" alt={member.name} /></div>
+  <div class="image-wrapper"><img src="http://via.placeholder.com/150" alt={member.name} /></div>
   <div class="info-wrapper">
     <h3>{member.name}</h3>
     <ul>
@@ -49,13 +65,25 @@
       <li>
         <ul class="inline">
           {#if member.website}
-            <li>WB</li>
+            <li>
+              <a href={member.website}>
+                <Icon data={globe} />
+              </a>
+            </li>
           {/if}
           {#if member.linkedin}
-            <li>LI</li>
+            <li>
+              <a href={member.linkedin}>
+                <Icon data={faLinkedin} />
+              </a>
+            </li>
           {/if}
           {#if member.github}
-            <li>GH</li>
+            <li>
+              <a href={member.github}>
+                <Icon data={faGithub} />
+              </a>
+            </li>
           {/if}
         </ul>
       </li>

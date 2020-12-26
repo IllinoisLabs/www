@@ -7,8 +7,9 @@
   .wrap {
     background-color: var(--off-white);
     padding: 8em 0 2.5em;
-    margin: 0.75em;
+    margin: var(--mg);
     border-radius: var(--br);
+    margin-bottom: 2em;
   }
 
   h1 {
