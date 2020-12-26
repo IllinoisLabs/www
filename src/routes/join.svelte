@@ -48,10 +48,9 @@
       <h3><span>🛠</span>Software Developer</h3>
     </summary>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit excepturi vel illo fugiat ipsum porro
-      molestiae quam eum. Vel eaque rerum fugit incidunt dolorum aliquid ducimus, dolor eum repellendus excepturi. Lorem
-      ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit excepturi vel illo fugiat ipsum porro molestiae
-      quam eum. Vel eaque rerum fugit incidunt dolorum aliquid ducimus, dolor eum repellendus excepturi.
+      As a software developer for IllinoisLabs, you will work in a collaborative coding environment to develop web applications that make students lives better on campus.
+      On the team, you will work in a collaborative coding environment and have ownership of user-facing features on these applications. You will also be involved in directing
+      system / application testing, coming up with new ideas, improving features of existing applications, and are expected to put in 5-10 hours of work per week.
     </p>
     <h4>Preferred Qualifications</h4>
     <ul>
@@ -68,9 +67,7 @@
       </li>
     </ul>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum a perferendis, expedita, consequuntur ipsam
-      dignissimos est quaerat provident iste praesentium iure cupiditate laudantium porro eaque aspernatur eos culpa
-      atque excepturi!
+      If you're interested, apply by clicking the link below! All applicants are welcome, and you'll hear back from us shortly!
     </p>
     <a href="." class="button">Apply For This Position</a>
   </details>
