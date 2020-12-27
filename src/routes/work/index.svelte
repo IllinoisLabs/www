@@ -94,7 +94,7 @@
           </p>
           <a rel="prefetch" href="work/{post.slug}" class="button">View This Project</a>
         </div>
-        <div class="img-wrap"><img src="http://via.placeholder.com/500x300" alt="" /></div>
+        <div class="img-wrap"><img src="https://picsum.photos/500/300" alt="" /></div>
       </article>
     {/each}
   </section>
