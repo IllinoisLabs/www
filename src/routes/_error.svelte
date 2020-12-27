@@ -26,10 +26,6 @@
     box-sizing: border-box;
     background-color: var(--off-white);
 
-    background-image: url('/hero.svg');
-    background-position: bottom -90px left;
-    background-repeat: repeat-x;
-
     padding: 0;
   }
 
@@ -54,6 +50,8 @@
       <pre>{error.stack}</pre>
     {/if}
 
-    <a href="/">Back to Home &rarr;</a>
+    <br />
+
+    <a href="/" class="button">Back to Home</a>
   </div>
 </div>
