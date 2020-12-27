@@ -13,7 +13,7 @@
     --height: 10em;
 
     position: absolute;
-    bottom: calc(-1 * var(--height));
+    bottom: calc(-1 * var(--height) + 1px);
     content: '';
     display: block;
     background-color: var(--dark);
