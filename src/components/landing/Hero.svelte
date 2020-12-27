@@ -15,8 +15,8 @@
     background-image: url('/hero.svg');
     background-position: bottom calc(-100px + 1vw) left;
     background-repeat: repeat-x;
-    padding-top: 7.5em;
-    min-height: calc(100vh - 7.5em - 7.5vw);
+    padding-top: 10em;
+    min-height: calc(100vh - 10em - 7.5vw);
     margin: var(--mg);
     border-radius: var(--br);
     position: relative;

@@ -17,11 +17,20 @@
   }
 
   .wrap {
-    width: 100%;
-    height: calc(100vh - 20em);
+    height: calc(100vh - 7em);
+    margin: var(--mg);
+    border-radius: var(--br);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    background-color: var(--off-white);
+
+    background-image: url('/hero.svg');
+    background-position: bottom -90px left;
+    background-repeat: repeat-x;
+
+    padding: 0;
   }
 
   @media (min-width: 480px) {

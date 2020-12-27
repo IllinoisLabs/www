@@ -32,7 +32,7 @@
     max-width: 1300px;
     width: 95%;
     justify-content: space-between;
-    background-color: inherit;
+    background-color: var(--off-white);
     box-shadow: none;
     border-radius: 0.5em;
     padding: 0 2em;
@@ -112,6 +112,10 @@
     outline: none;
   }
 
+  #mobile-menu {
+    display: none;
+  }
+
   @media only screen and (max-width: 795px) {
     .mobile {
       display: flex;
@@ -120,6 +124,7 @@
     }
 
     #mobile-menu {
+      display: block;
       width: 100%;
       position: fixed;
       top: 0;
@@ -141,6 +146,13 @@
 
     nav > ul {
       display: none;
+    }
+    /* nav {
+      background: none;
+    } */
+
+    .open-mm nav {
+      background-color: white;
     }
 
     .open-mm nav.scrolled {
@@ -166,12 +178,12 @@
   <div class={y > h ? 'scrolled wrap' : 'wrap'}>
     <nav class={y > h ? 'scrolled' : ''}>
       <ul>
-        <li><a href="."><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a></li>
+        <li><a href="/"><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a></li>
         <!-- </ul>
     <ul> -->
-        <li><a aria-current={segment === undefined ? 'page' : undefined} href=".">Home</a></li>
-        <li><a aria-current={segment === 'work' ? 'page' : undefined} href="work">Work</a></li>
-        <li><a aria-current={segment === 'about' ? 'page' : undefined} href="about">About</a></li>
+        <li><a aria-current={segment === undefined ? 'page' : undefined} href="/">Home</a></li>
+        <li><a aria-current={segment === 'work' ? 'page' : undefined} href="/work">Work</a></li>
+        <li><a aria-current={segment === 'about' ? 'page' : undefined} href="/about">About</a></li>
       </ul>
       <ul>
         <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
@@ -183,7 +195,7 @@
       </ul>
 
       <ul class="mobile">
-        <a href="."><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a>
+        <a href="/"><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a>
         <button on:click={() => (isOpen = !isOpen)}>
           {#if isOpen}&times;{:else}☰{/if}
         </button>
@@ -193,9 +205,9 @@
 
   {#if isOpen}
     <ul id="mobile-menu" on:click={() => (isOpen = false)}>
-      <li><a aria-current={segment === undefined ? 'page' : undefined} href=".">Home</a></li>
-      <li><a aria-current={segment === 'work' ? 'page' : undefined} href="work">Work</a></li>
-      <li><a aria-current={segment === 'about' ? 'page' : undefined} href="about">About</a></li>
+      <li><a aria-current={segment === undefined ? 'page' : undefined} href="/">Home</a></li>
+      <li><a aria-current={segment === 'work' ? 'page' : undefined} href="/work">Work</a></li>
+      <li><a aria-current={segment === 'about' ? 'page' : undefined} href="/about">About</a></li>
       <li class="cta">
         <a href="join"><div>Join Us</div></a>
       </li>

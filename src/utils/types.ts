@@ -9,3 +9,9 @@ export interface member {
   github?: url;
   website?: url;
 }
+
+export interface post {
+  title: string;
+  slug: string;
+  html: string;
+}

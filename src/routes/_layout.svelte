@@ -9,7 +9,7 @@
   main {
     position: relative;
     width: 100%;
-    min-height: calc(100vh);
+    min-height: calc(100vh - 10em);
     background-color: white;
     margin: 0 auto;
     padding: 0 0;

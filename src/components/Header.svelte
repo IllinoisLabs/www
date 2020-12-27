@@ -5,27 +5,32 @@
 
 <style>
   .wrap {
-    background-color: var(--off-white);
-    padding: 8em 0 2.5em;
-    margin: var(--mg);
+    padding: 7.5em 0 1em;
+    margin: var(--mg) 0;
     border-radius: var(--br);
-    margin-bottom: 2em;
   }
 
   h1 {
     margin-bottom: 0;
+    color: var(--dark);
   }
 
   p {
     margin: 0.5em 0 0;
   }
+
+  /* @media only screen and (max-width: 1100px) {
+    section {
+      padding-left: 1.5em;
+    }
+  } */
 </style>
 
 <div class="wrap">
   <section>
     <h1>{title}</h1>
-    {#if desc}
+    <!-- {#if desc}
       <p>{desc}</p>
-    {/if}
+    {/if} -->
   </section>
 </div>
