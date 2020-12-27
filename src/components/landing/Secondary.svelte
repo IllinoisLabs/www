@@ -46,29 +46,28 @@
       <div>
         <h3>Illinois Course Review</h3>
         <p>
-          All courses at UIUC are unique and special in their own way. Rather than judging a class by its perceived difficulty, we wanted to create a course
-          review website that judges classes by their content instead. ICR (Illinois Course Review) does just that.
+          All courses at UIUC are unique and special in their own way. Rather than judging a class by its perceived
+          difficulty, we wanted to create a course review website that judges classes by their content instead. ICR
+          (Illinois Course Review) does just that.
         </p>
-        <p>Project status: 
-          <span style="color: var(--orange)">Under Construction</span>
-        </p>
+        <p>Project status: <span style="color: var(--orange)">Under Construction</span></p>
       </div>
       <div>
         <h3>Smart Schedules</h3>
-        <p>SS is a "smart" schedule generator that will help you graduate if it's the last thing we do. Considers major requirements, walking distance between classes,
-        average GPA of courses, and more to deliver the perfect schedule.</p>
-        <p>Project status: 
-          <span style="color: var(--orange)">Under Construction</span>
+        <p>
+          SS is a "smart" schedule generator that will help you graduate if it's the last thing we do. Considers major
+          requirements, walking distance between classes, average GPA of courses, and more to deliver the perfect
+          schedule.
         </p>
+        <p>Project status: <span style="color: var(--orange)">Under Construction</span></p>
       </div>
       <div>
         <h3>Your Idea Here!</h3>
         <p>
-          We're always looking for the next big thing that will improve students lives. If you have an idea, let us know about it by applying!
+          We're always looking for the next big thing that will improve students lives. If you have an idea, let us know
+          about it by applying!
         </p>
-        <p>Project status: 
-          <span style="color: var(--green)">Waiting to be Discovered!</span>
-        </p>
+        <p>Project status: <span style="color: var(--green)">Waiting to be Discovered!</span></p>
       </div>
     </article>
   </section>

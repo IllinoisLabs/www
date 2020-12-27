@@ -12,7 +12,7 @@
     min-height: calc(100vh);
     background-color: white;
     margin: 0 auto;
-    padding: 0 0 2em;
+    padding: 0 0;
     box-sizing: border-box;
   }
 </style>

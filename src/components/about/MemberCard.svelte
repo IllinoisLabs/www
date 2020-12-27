@@ -66,21 +66,21 @@
         <ul class="inline">
           {#if member.website}
             <li>
-              <a href={member.website}>
+              <a href={member.website} target="_blank" rel="noreferrer noopener">
                 <Icon data={globe} />
               </a>
             </li>
           {/if}
           {#if member.linkedin}
             <li>
-              <a href={member.linkedin}>
+              <a href={member.linkedin} target="_blank" rel="noreferrer noopener">
                 <Icon data={faLinkedin} />
               </a>
             </li>
           {/if}
           {#if member.github}
             <li>
-              <a href={member.github}>
+              <a href={member.github} target="_blank" rel="noreferrer noopener">
                 <Icon data={faGithub} />
               </a>
             </li>

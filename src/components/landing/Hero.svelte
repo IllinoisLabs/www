@@ -18,7 +18,7 @@
     padding-top: 7.5em;
     min-height: calc(100vh - 7.5em - 7.5vw);
     margin: var(--mg);
-    border-radius: var(--br) var(--br) 0 0;
+    border-radius: var(--br);
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   }
