@@ -144,7 +144,7 @@
     display: inline-block;
     margin-right: 1.35em;
     font-size: 18px;
-    font-family: 'Krona One', sans-serif;
+    font-family: var(--header-stack);
   }
 
   ul > li:hover {

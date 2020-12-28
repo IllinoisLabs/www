@@ -23,7 +23,7 @@
   article {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 1.5em;
   }
 
@@ -94,7 +94,7 @@
           </p>
           <a rel="prefetch" href="work/{post.slug}" class="button">View This Project</a>
         </div>
-        <div class="img-wrap"><img src="https://picsum.photos/500/300" alt="" /></div>
+        <div class="img-wrap"><img src={`https://picsum.photos/500/300?name=${post.slug}`} alt="" /></div>
       </article>
     {/each}
   </section>

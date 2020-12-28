@@ -42,15 +42,22 @@
 
 <Header title="Join Us" />
 <section>
+  <h2>Who We're Looking For</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut distinctio ad illo dignissimos voluptatem
+    temporibus. In, voluptatibus eum quia, accusantium atque, natus minus placeat rem magni commodi reiciendis repellat!
+  </p>
   <h2>Open Positions</h2>
   <details>
     <summary>
       <h3><span>🛠</span>Software Developer</h3>
     </summary>
     <p>
-      As a software developer for Illinois Labs, you will work in a collaborative coding environment to develop web applications that make students lives better on campus.
-      On the team, you will work in a collaborative coding environment and have ownership of user-facing features on these applications. You will also be involved in directing
-      system / application testing, coming up with new ideas, improving features of existing applications, and are expected to put in 5-10 hours of work per week.
+      As a software developer for Illinois Labs, you will work in a collaborative coding environment to develop web
+      applications that make students lives better on campus. On the team, you will work in a collaborative coding
+      environment and have ownership of user-facing features on these applications. You will also be involved in
+      directing system / application testing, coming up with new ideas, improving features of existing applications, and
+      are expected to put in 5-10 hours of work per week.
     </p>
     <h4>Preferred Qualifications</h4>
     <ul>
@@ -67,7 +74,8 @@
       </li>
     </ul>
     <p>
-      If you're interested, apply by clicking the link below! All applicants are welcome, and you'll hear back from us shortly!
+      If you're interested, apply by clicking the link below! All applicants are welcome, and you'll hear back from us
+      shortly!
     </p>
     <a href="." class="button">Apply For This Position</a>
   </details>
@@ -76,9 +84,10 @@
       <h3><span>🎨</span>UI/UX Designer</h3>
     </summary>
     <p>
-    As an UI/UX Designer for Illinois Labs, you will be responsible for delivering the best user experience for the students that use our products.
-    On the team, you will work in a collaborative coding environment and have ownership of user-facing features on these applications.
-    You will be designing user interfaces and making use of frontend frameworks (React, Vue, etc.) to display content, and are expected to put in 5-10 hours of work per week.
+      As an UI/UX Designer for Illinois Labs, you will be responsible for delivering the best user experience for the
+      students that use our products. On the team, you will work in a collaborative coding environment and have
+      ownership of user-facing features on these applications. You will be designing user interfaces and making use of
+      frontend frameworks (React, Vue, etc.) to display content, and are expected to put in 5-10 hours of work per week.
     </p>
     <h4>Preferred Qualifications</h4>
     <ul>
@@ -101,7 +110,8 @@
       <li>Experience with branding design.</li>
     </ul>
     <p>
-      If you're interested, apply by clicking the link below! All applicants are welcome, and you'll hear back from us shortly!
+      If you're interested, apply by clicking the link below! All applicants are welcome, and you'll hear back from us
+      shortly!
     </p>
     <p><strong>Attaching or linking a portfolio of work is optional, but strongly recommended.</strong></p>
     <a href="." class="button">Apply For This Position</a>

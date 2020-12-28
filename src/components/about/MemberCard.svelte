@@ -57,7 +57,7 @@
 </style>
 
 <div class="wrap">
-  <div class="image-wrapper"><img src="https://picsum.photos/150" alt={member.name} /></div>
+  <div class="image-wrapper"><img src={`https://picsum.photos/150?name=${member.name}`} alt={member.name} /></div>
   <div class="info-wrapper">
     <h3>{member.name}</h3>
     <ul>
