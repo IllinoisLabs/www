@@ -183,9 +183,10 @@
         </li>
         <!-- </ul>
     <ul> -->
-        <li><a aria-current={segment === undefined ? 'page' : undefined} rel="prefetch" href="/">Home</a></li>
-        <li><a aria-current={segment === 'work' ? 'page' : undefined} rel="prefetch" href="/work">Work</a></li>
-        <li><a aria-current={segment === 'about' ? 'page' : undefined} rel="prefetch" href="/about">About</a></li>
+        <li><a aria-current={segment === undefined ? 'page' : undefined} href="/">Home</a></li>
+        <li><a aria-current={segment === 'about' ? 'page' : undefined} href="/about">About</a></li>
+        <!-- <li><a aria-current={segment === 'work' ? 'page' : undefined} href="/work">Work</a></li> -->
+        <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team">Team</a></li>
       </ul>
       <ul>
         <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
@@ -208,7 +209,7 @@
   {#if isOpen}
     <ul id="mobile-menu" on:click={() => (isOpen = false)}>
       <li><a aria-current={segment === undefined ? 'page' : undefined} href="/">Home</a></li>
-      <li><a aria-current={segment === 'work' ? 'page' : undefined} href="/work">Work</a></li>
+      <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team">Team</a></li>
       <li><a aria-current={segment === 'about' ? 'page' : undefined} href="/about">About</a></li>
       <li class="cta">
         <a href="join"><div>Join Us</div></a>

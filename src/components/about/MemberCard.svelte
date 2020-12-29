@@ -5,6 +5,7 @@
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { globe } from 'svelte-awesome/icons';
   import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import type members from '../../routes/team/_members';
 
   // props
   export let member: member;
@@ -34,6 +35,7 @@
   h3 {
     margin: 0;
     font-family: var(--font-stack);
+    font-size: 2.25em;
   }
 
   ul {
@@ -48,20 +50,25 @@
 
   ul.inline > li {
     display: inline;
-    margin-right: 0.15em;
+    margin-right: 0.30em;
+    font-size: 1.5em;
   }
 
   ul.inline > li:hover a {
     color: var(--blue);
   }
+
 </style>
 
 <div class="wrap">
-  <div class="image-wrapper"><img src={`https://picsum.photos/150?name=${member.name}`} alt={member.name} /></div>
+  <div class="image-wrapper"><a href="team/{member.slug}"><img src={member.image ? member.image : `https://picsum.photos/150?name=${member.name}`} alt={member.name} /></a></div>
   <div class="info-wrapper">
     <h3>{member.name}</h3>
     <ul>
-      <li>{member.position}</li>
+      <li><b>{member.position}</b></li>
+      {#if member.description}
+        <li>{member.description}</li>
+      {/if}
       <li>
         <ul class="inline">
           {#if member.website}

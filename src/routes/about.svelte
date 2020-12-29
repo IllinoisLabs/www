@@ -1,44 +1,5 @@
 <script lang="ts">
   import Header from '../components/Header.svelte';
-
-  import MemberCard from '../components/about/MemberCard.svelte';
-  import type { member } from '../utils/types';
-
-  let members: member[] = [
-    {
-      name: 'Siraj Chokshi',
-      position: 'Project Lead',
-      image: '',
-      website: 'https://sirajchokshi.com',
-      linkedin: 'https://linkedin.com/in/sirajchokshi',
-      github: 'https://github.com/sirajchokshi',
-    },
-    {
-      name: 'Davis Keene',
-      position: 'Project Lead',
-      image: '',
-      website: 'https://daviskeene.com',
-      linkedin: 'https://linkedin.com/in/daviskeene',
-      github: 'https://github.com/daviskeene',
-    },
-    {
-      name: 'Gene Wang',
-      position: 'Software Developer',
-      image: '',
-      linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
-      github: 'https://github.com/n3a9',
-    },
-    {
-      name: 'Neeraj Aggarwal',
-      position: 'Software Developer',
-      image: '',
-      website: 'https://neeraj.lol',
-      linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
-      github: 'https://github.com/n3a9',
-    },
-    { name: '??? ?????', position: 'Software Developer', image: '', linkedin: 'https://linkedin.com/in/sirajchokshi' },
-    { name: '???? ????', position: 'Software Developer', image: '', linkedin: 'https://linkedin.com/in/sirajchokshi' },
-  ];
 </script>
 
 <style>
@@ -63,6 +24,10 @@
 
   article {
     margin-bottom: 2.5em;
+  }
+
+  a:hover {
+    color: var(--blue);
   }
 </style>
 
@@ -93,10 +58,13 @@
       that?
     </p>
   </article>
-  <h2>Our Members</h2>
-  <article id="members">
-    {#each members as member}
-      <MemberCard {member} />
-    {/each}
-  </article>
+</section>
+
+<section>
+<h2>Our Team</h2>
+<article>
+  <p>
+    Check out our team of developers <a href="team">here!</a>
+  </p>
+</article>
 </section>
