@@ -42,10 +42,17 @@
 <section>
   <h2>How We Work</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero illum deserunt iusto iste adipisci eos voluptatibus
-    maiores, corrupti ipsam temporibus odit, incidunt voluptate nesciunt possimus, magni enim. Eum, amet repellendus!
+    We are dedicated to making the best possible product while making sure every member has ownership over at least one feature.
+    A flat organizational structure makes it known that no one voice is more important than another.
+    All members' decisions, ideas, and criticisms are equally valued.
+  </p>
+
+  <p>
+    Since we want all members to feel equal, we have deliberately chosen an engineering workflow that prioritizes collaboration and communication as opposed to competition.
+    Additionally, we use industry standard development tools and frameworks to accomplish our goals and ensure that everyone is learning together as we grow as an organization.
   </p>
 </section>
+
 <section>
   <h2>Meet Our Team</h2>
   <p>Meet our amazing team of developers and designers.</p>

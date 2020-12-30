@@ -185,8 +185,8 @@
         <!-- </ul>
     <ul> -->
         <li><a aria-current={segment === undefined ? 'page' : undefined} href="/">Home</a></li>
-        <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team" rel="prefetch">Team</a></li>
         <li><a aria-current={segment === 'about' ? 'page' : undefined} href="/about">About</a></li>
+        <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team" rel="prefetch">Team</a></li>
         <!-- <li><a aria-current={segment === 'work' ? 'page' : undefined} href="/work">Work</a></li> -->
       </ul>
       <ul>
