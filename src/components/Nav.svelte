@@ -110,6 +110,7 @@
     background: none;
     border: none;
     outline: none;
+    font-size: 20px;
   }
 
   #mobile-menu {
@@ -175,8 +176,8 @@
 <svelte:window bind:scrollY={y} bind:innerHeight={h} />
 
 <span class={isOpen ? 'open-mm' : ''}>
-  <div class={y > h ? 'scrolled wrap' : 'wrap'}>
-    <nav class={y > h ? 'scrolled' : ''}>
+  <div class={y > 80 ? 'scrolled wrap' : 'wrap'}>
+    <nav class={y > 80 ? 'scrolled' : ''}>
       <ul>
         <li>
           <a href="/" rel="prefetch"><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a>
@@ -184,9 +185,9 @@
         <!-- </ul>
     <ul> -->
         <li><a aria-current={segment === undefined ? 'page' : undefined} href="/">Home</a></li>
+        <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team" rel="prefetch">Team</a></li>
         <li><a aria-current={segment === 'about' ? 'page' : undefined} href="/about">About</a></li>
         <!-- <li><a aria-current={segment === 'work' ? 'page' : undefined} href="/work">Work</a></li> -->
-        <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team">Team</a></li>
       </ul>
       <ul>
         <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
@@ -209,7 +210,7 @@
   {#if isOpen}
     <ul id="mobile-menu" on:click={() => (isOpen = false)}>
       <li><a aria-current={segment === undefined ? 'page' : undefined} href="/">Home</a></li>
-      <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team">Team</a></li>
+      <li><a aria-current={segment === 'team' ? 'page' : undefined} href="/team" rel="prefetch">Team</a></li>
       <li><a aria-current={segment === 'about' ? 'page' : undefined} href="/about">About</a></li>
       <li class="cta">
         <a href="join"><div>Join Us</div></a>

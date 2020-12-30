@@ -12,29 +12,31 @@ import type { post_detailed } from '../../utils/types';
 const members: post_detailed[] = [
   {
     title: 'Siraj Chokshi',
-	slug: 'siraj',
-	description: "Hi, I'm Siraj!",
-	html: `
-			<p>First, you have to know what <a href='https://svelte.dev'>Svelte</a> is. Svelte is a UI framework with a bold new idea: rather than providing a library that you write code with (like React or Vue, for example), it's a compiler that turns your components into highly optimized vanilla JavaScript. If you haven't already read the <a href='https://svelte.dev/blog/frameworks-without-the-framework'>introductory blog post</a>, you should!</p>
+    slug: 'siraj',
+    description: "Hi, I'm Siraj!",
+    html: `
+		<div class="flex-container">
+			<div class="flex-child";">
+				<h2>Position: Project Lead</h2>
+				<p>Hi all, I'm Siraj, a sophomore at UIUC studying psychology, linguistics, and computer science. Excited to apply software development practices alongside product and strategy in an educational setting.
+				</p>
 
-			<p>Sapper is a Next.js-style framework (<a href='blog/how-is-sapper-different-from-next'>more on that here</a>) built around Svelte. It makes it embarrassingly easy to create extremely high performance web apps. Out of the box, you get:</p>
+				<h3>Hobbies</h3>
+				<p>Football/???</p>
 
-			<ul>
-				<li>Code-splitting, dynamic imports and hot module replacement, powered by webpack</li>
-				<li>Server-side rendering (SSR) with client-side hydration</li>
-				<li>Service worker for offline support, and all the PWA bells and whistles</li>
-				<li>The nicest development experience you've ever had, or your money back</li>
-			</ul>
-
-			<p>It's implemented as Express middleware. Everything is set up and waiting for you to get started, but you keep complete control over the server, service worker, webpack config and everything else, so it's as flexible as you need it to be.</p>
+				<h3>What I Hope to Achieve</h3>
+				<p> I hope that eventually one of our products will be widely used by Illinois students, and that Illinois Labs will become a self-sufficient organization capable
+				of changing students' lives.</p>
+			</div>
+		</div>
 		`,
   },
 
   {
     title: 'Davis Keene',
-	slug: 'davis',
-	description: "Hi, I'm Davis!",
-	html: `
+    slug: 'davis',
+    description: "Hi, I'm Davis!",
+    html: `
 
 			<style>
 				.flex-container {
@@ -65,6 +67,7 @@ const members: post_detailed[] = [
 				<h3> What I Hope to Achieve </h3>
 				<p> I hope that eventually one of our products will be widely used by Illinois students, and that Illinois Labs will become a self-sufficient organization capable
 				of changing students' lives.
+				</p>
 				</div>
 			</div>
 		`,
@@ -72,8 +75,8 @@ const members: post_detailed[] = [
 
   {
     title: 'Neeraj Agarwal',
-	slug: 'neeraj',
-	description: "Hi, I'm Neeraj!",
+    slug: 'neeraj',
+    description: "Hi, I'm Neeraj!",
     html: `
 			<p>In war, the soldiers who build bridges, repair roads, clear minefields and conduct demolitions — all under combat conditions — are known as <em>sappers</em>.</p>
 
@@ -83,9 +86,9 @@ const members: post_detailed[] = [
 
   {
     title: 'Gene Wang',
-	slug: 'gene',
-	description: "Hi, I'm Gene!",
-	html: `
+    slug: 'gene',
+    description: "Hi, I'm Gene!",
+    html: `
 			<p><a href='https://github.com/zeit/next.js'>Next.js</a> is a React framework from <a href='https://vercel.com/'>Vercel</a>, and is the inspiration for Sapper. There are a few notable differences, however:</p>
 
 			<ul>

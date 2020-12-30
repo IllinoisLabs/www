@@ -49,9 +49,9 @@
 
     <p>
       Our end goal is to make the UIUC experience a little less stressful for everyone. We already have amazing
-      advisors, professors, and student organizations that help make UIUC special. But ultimately students
-      are still stressed over meeting their degree requirements, whether or not they should take certain classes, etc.
-      Since this is such a universal expereince for
+      advisors, professors, and student organizations that help make UIUC special. But ultimately students are still
+      stressed over meeting their degree requirements, whether or not they should take certain classes, etc. Since this
+      is such a universal expereince for
       <i>all</i>
       college students, we figured it was in everyone's best interest to make tools that would resolve some of these
       issues. By taking action, we are making UIUC student life a little better with each project, and who doesn't want
@@ -61,10 +61,8 @@
 </section>
 
 <section>
-<h2>Our Team</h2>
-<article>
-  <p>
-    Check out our team of developers <a href="team">here!</a>
-  </p>
-</article>
+  <h2>Our Team</h2>
+  <article>
+    <p>Check out our team of developers <a href="/team" rel="prefetch">here</a>.</p>
+  </article>
 </section>

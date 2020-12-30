@@ -1,4 +1,3 @@
-
 <script context="module" lang="ts">
   import Header from '../../components/Header.svelte';
 
@@ -45,8 +44,22 @@
       linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
       github: 'https://github.com/n3a9',
     },
-    { name: '??? ?????', position: 'Software Developer', image: '', slug: '', description: '', linkedin: 'https://linkedin.com/in/sirajchokshi' },
-    { name: '???? ????', position: 'Software Developer', image: '', slug: '', description: '', linkedin: 'https://linkedin.com/in/sirajchokshi' },
+    {
+      name: '??? ?????',
+      position: 'Software Developer',
+      image: '',
+      slug: '',
+      description: '',
+      linkedin: 'https://linkedin.com/in/sirajchokshi',
+    },
+    {
+      name: '???? ????',
+      position: 'Software Developer',
+      image: '',
+      slug: '',
+      description: '',
+      linkedin: 'https://linkedin.com/in/sirajchokshi',
+    },
   ];
 </script>
 
@@ -55,7 +68,7 @@
     margin-top: 2em;
     display: grid;
     grid-template-columns: 2fr 2fr;
-    row-gap: 2.0em;
+    row-gap: 2em;
   }
 
   @media only screen and (max-width: 885px) {
@@ -84,9 +97,7 @@
 <div class="wrap">
   <section>
     <div>
-      <p>
-        Meet our amazing team of developers and designers! Click on a users profile to read more about them.
-      </p>
+      <p>Meet our amazing team of developers and designers! Click on a users profile to read more about them.</p>
     </div>
   </section>
 

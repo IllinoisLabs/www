@@ -1,11 +1,9 @@
 export type url = `${'http://' | 'https://'}${string}`;
-export type orgPosition = 'Software Developer' | 'Project Lead';
+export type orgPosition = 'Developer' | 'Lead' | 'Designer';
 
-export interface member {
+export interface Member {
   name: string;
   image: string;
-  slug: string;
-  description: string;
   position: orgPosition;
   linkedin?: url;
   github?: url;
@@ -18,9 +16,6 @@ export interface post {
   html: string;
 }
 
-export interface post_detailed {
-  title: string;
+export interface post_detailed extends post {
   description: string;
-  slug: string;
-  html: string;
 }

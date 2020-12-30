@@ -76,8 +76,8 @@
       <p style="margin-top: 0; margin-bottom: 1.75em;">
         <strong>Interested?</strong><br />See below for more about us and how to join.
       </p>
-      <a href="join" class="button">Join Us</a>
-      <a href="work" class="button secondary">Our Work</a>
+      <a href="/join" class="button">Join Us</a>
+      <a href="/about" class="button secondary">Learn More</a>
     </aside>
   </section>
 </div>

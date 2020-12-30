@@ -86,6 +86,7 @@
     color: var(--text);
     border: 2px solid white;
     border-right: none;
+    margin-right: 0;
   }
 
   input:required {
@@ -99,6 +100,7 @@
 
   .contact-form button {
     flex: 1;
+    margin-left: 0;
     border-radius: 0 var(--br) var(--br) 0;
     background: var(--blue);
     color: white;
