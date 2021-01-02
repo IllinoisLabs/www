@@ -21,8 +21,8 @@ export const members: Member[] = [
     name: 'Gene Wang',
     position: 'Software Architect',
     image: '',
-    linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
-    github: 'https://github.com/n3a9',
+    linkedin: 'https://linkedin.com/in/genewang0',
+    github: 'https://github.com/gwang0136',
   },
   {
     name: 'Neeraj Aggarwal',
