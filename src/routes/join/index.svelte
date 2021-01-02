@@ -1,5 +1,8 @@
 <script lang="ts">
-  import Header from '../components/Header.svelte';
+  import Header from '../../components/Header.svelte';
+
+  import Icon from 'svelte-awesome/components/Icon.svelte';
+  import { cog, sitemap } from 'svelte-awesome/icons';
 </script>
 
 <style>
@@ -18,6 +21,10 @@
     margin-right: 2px;
   }
 
+  h3 {
+    font-family: var(--font-stack);
+  }
+
   summary {
     padding: 0.65em 0;
     cursor: pointer;
@@ -34,6 +41,43 @@
   summary h3 span {
     margin: 0 0.75em 0 0.25em;
   }
+
+  .block-links {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--mg);
+  }
+
+  .block-links a {
+    text-decoration: none;
+    display: flex;
+    background-color: var(--off-white);
+    color: var(--dark);
+    box-sizing: border-box;
+    padding: var(--mg);
+    border-radius: var(--br);
+  }
+
+  .block-links a div:first-child {
+    color: var(--light-blue);
+  }
+
+  .block-links div {
+    display: flex;
+    align-items: center;
+  }
+
+  .block-links a div:last-child {
+    margin-left: var(--mg);
+  }
+
+  .block-links h3 {
+    font-size: 36px;
+    color: var(--light-blue);
+    margin: 0;
+    padding: 0;
+  }
 </style>
 
 <svelte:head>
@@ -48,6 +92,24 @@
     temporibus. In, voluptatibus eum quia, accusantium atque, natus minus placeat rem magni commodi reiciendis repellat!
   </p>
   <h2>Open Positions</h2>
+  <div class="block-links">
+    <a href="/join/software">
+      <div>
+        <Icon data={cog} scale={5} />
+      </div>
+      <div>
+        <h3>Software Developer</h3>
+      </div>
+    </a>
+    <a href="/join/design">
+      <div>
+        <Icon data={sitemap} scale={4} />
+      </div>
+      <div>
+        <h3>UI/UX Designer</h3>
+      </div>
+    </a>
+  </div>
   <details>
     <summary>
       <h3><span>🛠</span>Software Developer</h3>

@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from 'svelte-awesome/components/Icon.svelte';
+  import { times, bars as menu } from 'svelte-awesome/icons';
+
   export let segment: string;
 
   // current scroll position, inner height
@@ -106,20 +109,28 @@
   }
 
   .mobile button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    width: 1.5em;
     padding: 0;
-    background: none;
+    background: var(--orange);
     border: none;
     outline: none;
     font-size: 20px;
+    border-radius: 50%;
+    color: white;
   }
 
   #mobile-menu {
     display: none;
   }
 
-  @media only screen and (max-width: 795px) {
+  @media only screen and (max-width: 850px) {
     .mobile {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       width: 100%;
     }
@@ -198,12 +209,16 @@
         </li>
       </ul>
 
-      <ul class="mobile">
+      <div class="mobile">
         <a href="/"><span style="font-family: 'Krona One'; color: var(--orange);">Illinois Labs</span></a>
         <button on:click={() => (isOpen = !isOpen)}>
-          {#if isOpen}&times;{:else}☰{/if}
+          {#if isOpen}
+            <Icon data={times} />
+          {:else}
+            <Icon data={menu} />
+          {/if}
         </button>
-      </ul>
+      </div>
     </nav>
   </div>
 

@@ -12,7 +12,7 @@
 
   h1 {
     margin-bottom: 0;
-    color: var(--dark);
+    color: var(--text);
   }
 
   p {

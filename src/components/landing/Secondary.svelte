@@ -24,10 +24,44 @@
     clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
     border-radius: 0 0 var(--br) var(--br);
   }
+
   .card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: var(--mg);
+    display: flex;
+  }
+
+  .card-grid > div {
+    flex: 3;
+  }
+
+  .card-grid > div:first-child {
+    flex: 4;
+    margin-right: calc(var(--mg) * 6);
+  }
+
+  .card-grid > div:last-child {
+    margin-left: calc(var(--mg) * 2);
+  }
+
+  .card-grid > div > div {
+    margin-bottom: 3em;
+  }
+
+  .card-grid div img {
+    width: 5em;
+  }
+
+  .card-grid p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .card-grid > div:nth-child(2) > div:first-child > img {
+    margin-top: 2em;
+  }
+
+  .card-grid > div:nth-child(3) > div:first-child > img {
+    margin-top: 3.5em;
   }
 
   article {
@@ -36,38 +70,107 @@
 
   h3 {
     font-family: var(--font-stack);
+    margin: 0.25em 0 0.5em;
+  }
+
+  @media only screen and (max-width: 850px) {
+    .card-grid {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .card-grid > div {
+      flex: 1;
+    }
+
+    .card-grid > div:first-child {
+      flex: 1;
+      margin-right: 0;
+      margin-bottom: 3.25em;
+    }
+
+    .card-grid > div:last-child {
+      margin-left: 0;
+    }
+
+    .card-grid > div > div {
+      margin-bottom: 2em;
+      clear: both;
+    }
+
+    .card-grid > div > div > img {
+      float: left;
+      padding-bottom: 3em;
+      margin-right: 1.25em;
+    }
+
+    .card-grid div img {
+      width: 5em;
+    }
+
+    .card-grid p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .card-grid > div:nth-child(2) > div:first-child > img,
+    .card-grid > div:nth-child(3) > div:first-child > img {
+      margin-top: inherit;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
   }
 </style>
 
 <div class="wrap">
   <section>
-    <h2>What We Do</h2>
     <article class="card-grid">
       <div>
-        <h3>Illinois Course Review</h3>
+        <h2>Our Solutions</h2>
         <p>
-          All courses at UIUC are unique and special in their own way. Rather than judging a class by its perceived
-          difficulty, we wanted to create a course review website that judges classes by their content instead. ICR
-          (Illinois Course Review) does just that.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae veritatis, pariatur, odio beatae accusantium,
+          sapiente officia nihil laboriosam explicabo accusamus voluptatum cumque odit eius non obcaecati amet vero
+          natus culpa!
         </p>
-        <p>Project status: <span style="color: var(--orange)">Under Construction</span></p>
+        <br />
+        <a href="/about" class="button">Learn More</a>
       </div>
       <div>
-        <h3>Smart Schedules</h3>
-        <p>
-          SS is a "smart" schedule generator that will help you graduate if it's the last thing we do. Considers major
-          requirements, walking distance between classes, average GPA of courses, and more to deliver the perfect
-          schedule.
-        </p>
-        <p>Project status: <span style="color: var(--orange)">Under Construction</span></p>
+        <div>
+          <img src="icons/puzzle.svg" alt="" />
+          <h3>Learning Emphasis</h3>
+          <p>
+            Throughout building products for students theres a lot we can learn from the problems we solve and one
+            another.
+          </p>
+        </div>
+        <div>
+          <img src="icons/clean.svg" alt="" />
+          <h3>High Quality</h3>
+          <p>
+            Maintaining high standards for documentation and engineering practices allows us to quickly piece together
+            quality software.
+          </p>
+        </div>
       </div>
       <div>
-        <h3>Your Idea Here!</h3>
-        <p>
-          We're always looking for the next big thing that will improve students lives. If you have an idea, let us know
-          about it by applying!
-        </p>
-        <p>Project status: <span style="color: var(--green)">Waiting to be Discovered!</span></p>
+        <div>
+          <img src="icons/window.svg" alt="" />
+          <h3>Accessibility</h3>
+          <p>
+            By knowing our audience of students we can create usable, local solutions to problems within our community.
+          </p>
+        </div>
+        <div>
+          <img src="icons/trend.svg" alt="" />
+          <h3>Retention</h3>
+          <p>
+            Working software is great, but the strongest products maintain value by keeping their users coming back.
+          </p>
+        </div>
       </div>
     </article>
   </section>

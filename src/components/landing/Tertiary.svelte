@@ -6,7 +6,7 @@
     position: relative;
     padding-bottom: 2em;
     margin: 15em var(--mg) 7.5em;
-    color: #ffffff99;
+    color: var(--off-white);
   }
 
   .wrap::after {
@@ -27,7 +27,7 @@
     --height: 10em;
 
     position: absolute;
-    top: calc(-1 * var(--height));
+    top: calc(-1 * var(--height) + 1px);
     content: '';
     display: block;
     background-color: var(--dark);

@@ -3,7 +3,7 @@ import type { Member } from './types';
 export const members: Member[] = [
   {
     name: 'Siraj Chokshi',
-    position: 'Lead',
+    position: 'Co-Founder & Lead',
     image: '',
     website: 'https://sirajchokshi.com',
     linkedin: 'https://linkedin.com/in/sirajchokshi',
@@ -11,7 +11,7 @@ export const members: Member[] = [
   },
   {
     name: 'Davis Keene',
-    position: 'Lead',
+    position: 'Co-Founder & Lead',
     image: '/headshots/davis.jpg',
     website: 'https://daviskeene.com',
     linkedin: 'https://linkedin.com/in/daviskeene',
@@ -19,29 +19,17 @@ export const members: Member[] = [
   },
   {
     name: 'Gene Wang',
-    position: 'Developer',
+    position: 'Software Architect',
     image: '',
     linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
     github: 'https://github.com/n3a9',
   },
   {
     name: 'Neeraj Aggarwal',
-    position: 'Developer',
+    position: 'Technical Advisor',
     image: '',
     website: 'https://neeraj.lol',
     linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
     github: 'https://github.com/n3a9',
-  },
-  {
-    name: '??? ?????',
-    position: 'Developer',
-    image: '',
-    linkedin: 'https://linkedin.com/in/sirajchokshi',
-  },
-  {
-    name: '???? ????',
-    position: 'Designer',
-    image: '',
-    linkedin: 'https://linkedin.com/in/sirajchokshi',
   },
 ];

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { member } from '../../utils/types';
+  import type { Member } from '../../utils/types';
 
   // icons
   import Icon from 'svelte-awesome/components/Icon.svelte';
@@ -7,7 +7,7 @@
   import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
   // props
-  export let member: member;
+  export let member: Member;
 </script>
 
 <style>
@@ -34,6 +34,7 @@
   h3 {
     margin: 0;
     font-family: var(--font-stack);
+    font-size: 18px;
   }
 
   ul {
@@ -44,6 +45,7 @@
 
   ul > li {
     line-height: 1.75;
+    font-size: 16px;
   }
 
   ul.inline > li {
@@ -57,7 +59,9 @@
 </style>
 
 <div class="wrap">
-  <div class="image-wrapper"><img src={`https://picsum.photos/150?v=${member.name}`} alt={member.name} /></div>
+  <div class="image-wrapper">
+    <img src={member.image || `https://picsum.photos/150?v=${member.name}`} alt={member.name} />
+  </div>
   <div class="info-wrapper">
     <h3>{member.name}</h3>
     <ul>

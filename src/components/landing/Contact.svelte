@@ -147,6 +147,7 @@
     margin-right: 1.35em;
     font-size: 18px;
     font-family: var(--header-stack);
+    font-weight: 500;
   }
 
   ul > li:hover {
@@ -170,10 +171,11 @@
     <div>
       <h2>Learn More</h2>
       <h3>Sign-up to our mailing list to keep in touch.</h3>
-      <div class="contact-form">
+      <form class="contact-form" name="mailing" method="POST" data-netlify="true">
+        <input type="hidden" name="mailing-list" value="contact" />
         <input type="email" name="email" bind:this={emailInput} bind:value={email} placeholder="name@example.com" />
-        <button disabled={!emailIsValid} on:click={() => console.log(email)}>Join</button>
-      </div>
+        <button disabled={!emailIsValid} type="submit">Join</button>
+      </form>
       <h3>Find us elsewhere.</h3>
       <ul>
         <li>
@@ -183,12 +185,12 @@
           </a>
         </li>
         <li>
-          <a href="" target="_blank" rel="noreferrer noopener">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer noopener">
             <Icon data={faFacebook} scale={1.5} />
             <span>Facebook</span></a>
         </li>
         <li>
-          <a href="" target="_blank" rel="noreferrer noopener">
+          <a href="https://linkedin.in" target="_blank" rel="noreferrer noopener">
             <Icon data={faLinkedin} scale={1.5} />
             <span>LinkedIn</span></a>
         </li>

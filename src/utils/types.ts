@@ -1,10 +1,11 @@
+/* Helpers */
 export type url = `${'http://' | 'https://'}${string}`;
-export type orgPosition = 'Developer' | 'Lead' | 'Designer';
 
+/* Content */
 export interface Member {
   name: string;
   image: string;
-  position: orgPosition;
+  position: string;
   linkedin?: url;
   github?: url;
   website?: url;
@@ -18,4 +19,33 @@ export interface post {
 
 export interface post_detailed extends post {
   description: string;
+}
+
+/* Forms */
+export interface FormBlock {
+  label: string;
+  name: string;
+  required: boolean;
+  desc?: string;
+}
+
+export interface FormBlockTextArea extends FormBlock {
+  rows: number;
+  maxChar?: number;
+  minChar?: number;
+  placeholder?: string;
+}
+
+export interface FormBlockInput extends FormBlock {
+  placeholder: string;
+  type?: string;
+}
+
+export interface FormBlockSelect extends FormBlock {
+  options: string[];
+  allowMultiple?: boolean;
+}
+
+export interface FormBlockUpload extends FormBlock {
+  acceptableTypes: string[] | null;
 }
