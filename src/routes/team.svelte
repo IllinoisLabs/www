@@ -17,63 +17,57 @@
   }
 
   .companies {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-row-gap: 1.5em;
-    grid-template-rows: 3em 3em;
-    width: 100%;
-    margin: 2em 0 0 0;
-    justify-content: space-around;
-    opacity: 0.5;
+    margin: 0 auto 1.5em;
   }
 
-  .companies div {
-    display: flex;
-    justify-content: center;
+  .companies h3 {
+    text-align: center;
+    font-family: var(--font-stack);
+  }
+  .companies > img {
+    margin: 1em auto;
     width: 100%;
-    height: 100%;
-
-    user-select: none;
-    -ms-user-drag: none;
-    -moz-user-drag: none;
-    -webkit-user-drag: none;
-
-    user-drag: none;
-    -ms-user-drag: none;
-    -moz-user-drag: none;
-    -webkit-user-drag: none;
+    opacity: 0.6;
   }
 
-  .companies div img {
-    object-fit: contain;
-    max-height: 1.5em;
-    max-width: 8em;
+  h2 {
+    margin-bottom: 1em;
   }
 
   @media only screen and (max-width: 885px) {
     #members {
       grid-template-columns: 1fr 1fr;
     }
-    .companies {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  }
+
+  .companies > img.mobile {
+    display: none;
+    max-width: 480px;
+    margin: 1.25em auto 2.5em;
   }
 
   @media only screen and (max-width: 480px) {
     #members {
       grid-template-columns: 1fr;
     }
-    .companies {
-      grid-template-columns: 1fr;
-    }
   }
 
-  a:hover {
-    color: var(--blue);
+  @media only screen and (max-width: 760px) {
+    .companies > img:not(.mobile) {
+      display: none;
+    }
+
+    .companies > img.mobile {
+      display: block;
+    }
   }
 
   article.split-pane {
     display: flex;
+  }
+
+  figure {
+    margin: 0;
   }
 
   figure img {
@@ -87,7 +81,7 @@
   }
 
   article.split-pane div {
-    flex: 2;
+    flex: 3;
   }
 </style>
 
@@ -95,8 +89,17 @@
   <title>About</title>
 </svelte:head>
 
-<Header title="Team" />
+<Header
+  title="Team"
+  desc="We're a group of motivated student developers and designers at the University of Illinois."
+  graphicSrc="/team.svg" />
 
+<section class="companies center">
+  <h3>Where We Work</h3>
+  <img src="logos/companies.svg" alt="" draggable="false" />
+  <img src="logos/companies-sm.svg" alt="" class="mobile" draggable="false" />
+</section>
+<br />
 <section>
   <h2>How We Work</h2>
   <article class="split-pane">
@@ -118,7 +121,7 @@
   </article>
 </section>
 
-<section>
+<section class="center">
   <h2>Leadership</h2>
   <article id="members">
     {#each members as member}
@@ -127,18 +130,12 @@
   </article>
 </section>
 
-<section>
-  <h2>Where We Work</h2>
-  <article class="companies">
-    <div><img src="logos/facebook.svg" alt="Facebook Logo" draggable="false" /></div>
-    <div style="padding: 1em; margin-top: -0.8em; box-sizing: border-box;">
-      <img src="logos/uber.svg" alt="Uber Logo" draggable="false" />
-    </div>
-    <div><img src="logos/hubspot.svg" alt="HubSpot Logo" draggable="false" /></div>
-    <div style="padding: 0.8em; margin-top: -0.93em; box-sizing: border-box;">
-      <img src="logos/intel.svg" alt="Intel Logo" draggable="false" />
-    </div>
-    <div><img src="logos/jellyfish.svg" alt="JellyfishAI Logo" draggable="false" /></div>
-    <div><img src="logos/abbvie.svg" alt="AbbVie Logo" draggable="false" /></div>
-  </article>
+<section class="center">
+  <h2 style="margin-bottom: 0">Join Us</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta reprehenderit quidem nisi nobis laborum, natus
+    necessitatibus amet adipisci vero quisquam quibusdam dignissimos id, itaque beatae officia quo, repellendus
+    voluptatibus non.
+  </p>
+  <div class="button-wrapper"><a href="/join" class="button">Join Us</a></div>
 </section>

@@ -19,6 +19,13 @@
   img {
     border-radius: 50%;
     width: 100%;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    user-drag: none;
+    -webkit-user-drag: none;
   }
 
   .image-wrapper {
@@ -56,11 +63,28 @@
   ul.inline > li:hover a {
     color: var(--blue);
   }
+
+  @media only screen and (min-width: 885px) {
+    .wrap {
+      flex-flow: column;
+      align-items: center;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .wrap > .image-wrapper {
+      max-width: 8.5em;
+    }
+
+    .info-wrapper {
+      padding: 0;
+    }
+  }
 </style>
 
 <div class="wrap">
   <div class="image-wrapper">
-    <img src={member.image || `https://picsum.photos/150?v=${member.name}`} alt={member.name} />
+    <img src={member.image || `https://picsum.photos/150?v=${member.name}`} alt={member.name} draggable="false" />
   </div>
   <div class="info-wrapper">
     <h3>{member.name}</h3>

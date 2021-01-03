@@ -105,6 +105,26 @@ a.button:hover::after {
   padding-right: 0;
 }
 
+.center > h2,
+.center > h2 ~ p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.center > h2 ~ p {
+  margin: 1em auto;
+  max-width: 720px;
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.center > .button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em auto 3.5em;
+}
+
 input::placeholder {
   opacity: 0.5;
 }

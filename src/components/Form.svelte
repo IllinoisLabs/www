@@ -85,7 +85,6 @@
   }
 
   input:not([type='radio']):not([type='checkbox']),
-  select,
   textarea,
   label.fake-upload {
     display: block;
@@ -189,7 +188,7 @@
   {/if}
 
   <form on:submit={handleSubmit} action="POST" name="contact" data-netlify="true">
-    <input type="hidden" name={formData.formName} value="contact" />
+    <input type="hidden" name={formData.formName} value={formData.formName} />
     {#each formData.blocks as block}
       <div class="form-block">
         <label class={`header ${block.required ? 'required' : ''}`} for={block.name}>{block.label}</label>

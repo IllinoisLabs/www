@@ -1,6 +1,7 @@
 <script lang="ts">
   export let title: string;
   export let desc: string;
+  export let graphicSrc: string;
 </script>
 
 <style>
@@ -11,12 +12,38 @@
   }
 
   h1 {
-    margin-bottom: 0;
-    color: var(--text);
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: var(--orange);
   }
 
-  p {
-    margin: 0.5em 0 0;
+  p.headline {
+    margin: 0;
+    font-size: 32px;
+    color: var(--dark);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+  }
+
+  section > * {
+    flex: 1;
+    align-items: center;
+  }
+
+  figure {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  figure > img {
+    width: 100%;
   }
 
   /* @media only screen and (max-width: 1100px) {
@@ -28,9 +55,12 @@
 
 <div class="wrap">
   <section>
-    <h1>{title}</h1>
-    <!-- {#if desc}
-      <p>{desc}</p>
-    {/if} -->
+    <div class="desc">
+      <h1>{title}</h1>
+      {#if desc}
+        <p class="headline">{desc}</p>
+      {/if}
+    </div>
+    <figure><img src={graphicSrc} alt="" /></figure>
   </section>
 </div>

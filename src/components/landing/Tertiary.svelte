@@ -68,11 +68,10 @@
     <div>
       <h2>About</h2>
       <p>
-        Illinois Labs is an organization made by students, for students. The University of Illinois has some of the most
-        talented student developers in the world, and yet none of their currently registered CS based student
-        organizations are dedicated to creating solutions that make students lives easier. It is our mission to provide
-        tools and services to the UIUC student body that will benefit the community; from course reviews to schedule
-        makers and everything in between.
+        We're a team of software developers and designers dedicated to improving the college expereince at UIUC. As a
+        team, we believe in making educational resources that will make school less stressful for everyone. We firmly
+        believe that Illinois Labs is a unique computer science organization, with a startup-like engineering workflow
+        and a tenacious desire for growth for the sake of giving back to all current and future Illini.
       </p>
       <p>
         If you're interested in joining Illinois Labs, check out some of our open positions! We're always looking for

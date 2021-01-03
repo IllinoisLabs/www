@@ -131,9 +131,9 @@
       <div>
         <h2>Our Solutions</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae veritatis, pariatur, odio beatae accusantium,
-          sapiente officia nihil laboriosam explicabo accusamus voluptatum cumque odit eius non obcaecati amet vero
-          natus culpa!
+          Enterprise software bought by the school fails to meet the needs of Illinois' students by appealing to
+          administrators with purchasing power. We, as an organization, can leverage our interests as students to build
+          the best possible software solutions to problems in our community.
         </p>
         <br />
         <a href="/about" class="button">Learn More</a>
