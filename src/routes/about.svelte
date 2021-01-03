@@ -82,26 +82,21 @@
 
 <Header title="About" desc="What is Illinois Labs?" />
 <section>
+  <p>All about Illinois Labs. Who we are, what we do, and why we do it.</p>
   <h2>Our Mission</h2>
   <div class="split">
     <article>
       <p>
-        Illinois Labs is an organization made by students, for students. The University of Illinois has some of the most
-        talented student developers in the world, and yet none of their currently registered CS based student
-        organizations are dedicated to creating solutions that make students lives easier. It is our mission to provide
-        tools and services to the UIUC student body that will benefit the community; from course reviews to schedule
-        makers and everything in between.
+        We are an organization made by students, for students. As software developers and designers, it is our mission to provide tools
+        and services to the UIUC student body that will benefit the community; from course review dashboards to schedule makers and everything in between.
+
+        Most university supported software for students is made by companies whose products appeal to school administrators, and focus more on profit than student utility.
+        Unmotivated by income, we can effectively meet the needs of the student body and align our products with our values as students.
       </p>
 
       <p>
-        Our end goal is to make the UIUC experience a little less stressful for everyone. We already have amazing
-        advisors, professors, and student organizations that help make UIUC special. But ultimately students are still
-        stressed over meeting their degree requirements, whether or not they should take certain classes, etc. Since
-        this is such a universal expereince for
-        <i>all</i>
-        college students, we figured it was in everyone's best interest to make tools that would resolve some of these
-        issues. By taking action, we are making UIUC student life a little better with each project, and who doesn't
-        want that?
+        Our end goal is to make the college experience a little less stressful for everyone. By taking action, we are making UIUC student life a little better 
+        with each project, and who doesn't want that?
       </p>
     </article>
     <figure><img src="/draguser.svg" alt="" /></figure>
@@ -121,8 +116,7 @@
         <div>
           <h3>Students-First</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vel magnam cum, perspiciatis ab voluptates
-            inventore illo earum aperiam, laboriosam quos eum illum recusandae ea voluptatem adipisci nihil porro id.
+            The needs of the student body come above all else. The projects that we develop are created to provide utility for current and future UIUC students.
           </p>
         </div>
       </li>
@@ -131,8 +125,8 @@
         <div>
           <h3>Open Source</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vel magnam cum, perspiciatis ab voluptates
-            inventore illo earum aperiam, laboriosam quos eum illum recusandae ea voluptatem adipisci nihil porro id.
+            All of our project source code is made publically available. Any and all curious students should be able to see what powers the applications we make to help them.
+            Only members can contribute to our projects, though!
           </p>
         </div>
       </li>
@@ -141,8 +135,8 @@
         <div>
           <h3>Be Concise</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vel magnam cum, perspiciatis ab voluptates
-            inventore illo earum aperiam, laboriosam quos eum illum recusandae ea voluptatem adipisci nihil porro id.
+            Our projects tackle very specific needs of the community. We are concise in our project and organization-wide goals, and define culture in specific terms of the values we
+            want to see from our members.
           </p>
         </div>
       </li>

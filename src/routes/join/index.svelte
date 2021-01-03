@@ -88,9 +88,14 @@
 <section>
   <h2>Who We're Looking For</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut distinctio ad illo dignissimos voluptatem
-    temporibus. In, voluptatibus eum quia, accusantium atque, natus minus placeat rem magni commodi reiciendis repellat!
-  </p>
+    If you're a passionate developer or UI/UX desinger that wants to:
+    </p>
+    <ul>
+      <li>Create projects that meet student needs at U of I</li>
+      <li>Work in a collaborative environment</li>
+      <li>Gain experiene and specific knowledge on software / design tools and frameworks</li>
+    </ul>
+  <p>...then we want you in our organization! We're still growing, and are always looking for new members to join our cause.</p>
   <h2>Open Positions</h2>
   <div class="block-links">
     <a href="/join/software">

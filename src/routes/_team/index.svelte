@@ -2,15 +2,13 @@
   import Header from '../../components/Header.svelte';
 
   import MemberCard from '../../components/about/MemberCard.svelte';
-  import type { member } from '../../utils/types';
+  import type { Member } from '../../utils/types';
 
-  let members: member[] = [
+  let members: Member[] = [
     {
       name: 'Siraj Chokshi',
       position: 'Project Lead',
       image: '',
-      description: "Hi, I'm Siraj!",
-      slug: 'siraj',
       website: 'https://sirajchokshi.com',
       linkedin: 'https://linkedin.com/in/sirajchokshi',
       github: 'https://github.com/sirajchokshi',
@@ -19,8 +17,6 @@
       name: 'Davis Keene',
       position: 'Project Lead',
       image: '/headshots/davis.jpg',
-      description: "Hi, I'm Davis!",
-      slug: 'davis',
       website: 'https://daviskeene.com',
       linkedin: 'https://linkedin.com/in/daviskeene',
       github: 'https://github.com/daviskeene',
@@ -29,8 +25,6 @@
       name: 'Gene Wang',
       position: 'Software Developer',
       image: '',
-      description: "Hi, I'm Gene!",
-      slug: 'gene',
       linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
       github: 'https://github.com/n3a9',
     },
@@ -38,8 +32,6 @@
       name: 'Neeraj Aggarwal',
       position: 'Software Developer',
       image: '',
-      description: "Hi, I'm Neeraj!",
-      slug: 'neeraj',
       website: 'https://neeraj.lol',
       linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
       github: 'https://github.com/n3a9',
@@ -48,16 +40,12 @@
       name: '??? ?????',
       position: 'Software Developer',
       image: '',
-      slug: '',
-      description: '',
       linkedin: 'https://linkedin.com/in/sirajchokshi',
     },
     {
       name: '???? ????',
       position: 'Software Developer',
       image: '',
-      slug: '',
-      description: '',
       linkedin: 'https://linkedin.com/in/sirajchokshi',
     },
   ];
