@@ -83,10 +83,21 @@
   article.split-pane div {
     flex: 3;
   }
+
+  @media only screen and (max-width: 760px) {
+    article.split-pane {
+      flex-flow: column;
+    }
+
+    article.split-pane figure {
+      max-width: 20em;
+      margin: 1em auto 2em;
+    }
+  }
 </style>
 
 <svelte:head>
-  <title>About</title>
+  <title>Team</title>
 </svelte:head>
 
 <Header

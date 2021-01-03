@@ -4,9 +4,8 @@
 
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { upload } from 'svelte-awesome/icons';
-  import About from '../routes/about.svelte';
 
-  export let formData: { formLabel: string; formName: string; formDesc: string; blocks: FormBlock[] };
+  export let formData: { formLabel: string; formName: string; formDesc?: string; blocks: FormBlock[] };
 
   const encode = (data) => {
     return Object.keys(data)
@@ -42,10 +41,12 @@
     padding: 30px;
     background-color: #00000008;
     border-radius: 0.5em;
+    max-width: 1000px;
   }
 
   h2 {
     padding: 1em 0 0;
+    text-align: center;
   }
 
   p {
@@ -76,7 +77,7 @@
   }
   label ~ p {
     font-size: 16px;
-    opacity: 0.95;
+    opacity: 0.8;
     margin-bottom: 0;
   }
 

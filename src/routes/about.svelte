@@ -7,10 +7,6 @@
     width: 100%;
   }
 
-  article {
-    margin-bottom: 2.5em;
-  }
-
   .card-grid {
     margin-top: 3.5em;
     display: flex;
@@ -92,6 +88,7 @@
 
   .split {
     display: flex;
+    margin-bottom: 2.5em;
   }
 
   .split > * {
@@ -100,6 +97,17 @@
 
   .split > figure {
     flex: 1;
+  }
+
+  @media only screen and (max-width: 760px) {
+    .split {
+      flex-flow: column;
+    }
+
+    .split figure {
+      max-width: 20em;
+      margin: 1em auto 2em;
+    }
   }
 
   /* #values {

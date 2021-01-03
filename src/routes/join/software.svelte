@@ -10,10 +10,8 @@
     FormBlockUpload,
   } from '../../utils/types';
 
-  const formData: { formLabel: string; formName: string; formDesc: string; blocks: FormBlock[] } = {
+  const formData: { formLabel: string; formName: string; formDesc?: string; blocks: FormBlock[] } = {
     formLabel: 'Software Developer Application',
-    formDesc:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
     formName: 'swe-app',
     blocks: [
       {
@@ -117,11 +115,42 @@
   };
 </script>
 
+<style>
+  p {
+    opacity: 1;
+  }
+</style>
+
 <svelte:head>
   <title>Software Developer Application | Illinois Labs</title>
 </svelte:head>
 
-<Header title="Apply" />
+<Header title="Software Development @ Illinois Labs" />
+
+<section style="max-width: 800px;">
+  <p>
+    As a software developer for Illinois Labs, you will work in a collaborative coding environment to develop web
+    applications that make students lives better on campus. On the team, you will work in a collaborative coding
+    environment and have ownership of user-facing features on these applications. You will also be involved in directing
+    system / application testing, coming up with new ideas, improving features of existing applications, and are
+    expected to put in 5-10 hours of work per week.
+  </p>
+  <h4>Preferred Qualifications</h4>
+  <ul>
+    <li>Familiarity with JavaScript, Python, C++, Java, and/or other high-level programming languages.</li>
+    <li>Working knowledge of Git.</li>
+    <li>Knowledge of web services and surrounding concepts (GraphQL/REST, DOM, HTTP) is a plus.</li>
+    <li>Demonstrated interest in building solutions to problems or programming for fun.</li>
+  </ul>
+  <h4>Bonus Points</h4>
+  <ul>
+    <li>
+      A specialization like frontend engineering, API development, infrastructure, applied machine learning, data
+      visualization, or another sub-discipline.
+    </li>
+  </ul>
+  <p>All applicants are welcome, and you'll hear back from us shortly!</p>
+</section>
 
 <section>
   <Form {formData} />

@@ -10,10 +10,8 @@
     FormBlockUpload,
   } from '../../utils/types';
 
-  const formData: { formLabel: string; formName: string; formDesc: string; blocks: FormBlock[] } = {
+  const formData: { formLabel: string; formName: string; formDesc?: string; blocks: FormBlock[] } = {
     formLabel: 'UI/UX Designer Application',
-    formDesc:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
     formName: 'design-app',
     blocks: [
       {
@@ -90,11 +88,52 @@
   };
 </script>
 
+<style>
+  p {
+    opacity: 1;
+  }
+</style>
+
 <svelte:head>
   <title>UI/UX Designer Application | Illinois Labs</title>
 </svelte:head>
 
-<Header title="Apply" />
+<Header title="UI/UX Design @ Illinois Labs" />
+
+<section style="max-width: 800px;">
+  <p>
+    As an UI/UX Designer for Illinois Labs, you will be responsible for delivering the best user experience for the
+    students that use our products. On the team, you will work in a collaborative coding environment and have ownership
+    of user-facing features on these applications. You will be designing user interfaces by keeping both users and
+    development requirements in mind.
+    <strong>Expect to put in 5-10 hours of work per week.</strong>
+  </p>
+  <h4>Preferred Qualifications</h4>
+  <ul>
+    <li>
+      Ability to build out application designs end-to-end (i.e. from user research to wireframes to hi-fidelity
+      prototypes).
+    </li>
+    <li>Ability to take concepts such as user goals and adapt those ideas into a usable solution and interface.</li>
+    <li>
+      Experience with hi-fidelity design tools like Figma or Sketch and other prototyping software like Balsamiq,
+      Photoshop, Illustrator, etc.
+    </li>
+  </ul>
+  <h4>Bonus Points</h4>
+  <ul>
+    <li>
+      Development skills (specifically converting mockups into CSS/markup). This extends to being comfortable with
+      frontend tools like HTML, CSS, JavaScript, and frameworks like React, Vue, Angular, etc.
+    </li>
+    <li>Experience with branding design.</li>
+  </ul>
+  <p>
+    All applicants are welcome, and you'll hear back from us shortly!
+    <br />
+    Attaching or linking a portfolio of work is optional, but strongly recommended.
+  </p>
+</section>
 
 <section>
   <Form {formData} />

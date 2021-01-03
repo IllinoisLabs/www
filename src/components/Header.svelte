@@ -11,8 +11,10 @@
     border-radius: var(--br);
   }
 
-  h1 {
+  .desc h1 {
     font-size: 1em;
+  }
+  h1 {
     margin-bottom: 0.5em;
     color: var(--orange);
   }
@@ -46,21 +48,39 @@
     width: 100%;
   }
 
-  /* @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 760px) {
     section {
-      padding-left: 1.5em;
+      flex-flow: column;
+      min-height: 0;
     }
-  } */
+
+    section figure {
+      max-width: 20em;
+      margin: 2.5em 0;
+    }
+
+    p.headline {
+      font-size: 24px;
+    }
+  }
 </style>
 
-<div class="wrap">
-  <section>
-    <div class="desc">
-      <h1>{title}</h1>
-      {#if desc}
-        <p class="headline">{desc}</p>
-      {/if}
-    </div>
-    <figure><img src={graphicSrc} alt="" /></figure>
-  </section>
-</div>
+{#if desc && graphicSrc}
+  <div class="wrap">
+    <section>
+      <div class="desc">
+        <h1>{title}</h1>
+        {#if desc}
+          <p class="headline">{desc}</p>
+        {/if}
+      </div>
+      <figure><img src={graphicSrc} alt="" /></figure>
+    </section>
+  </div>
+{:else}
+  <div class="wrap" style="padding-bottom: 0">
+    <section style="min-height: 0">
+      <h1 style="margin-bottom: 0; text-align: center;">{title}</h1>
+    </section>
+  </div>
+{/if}
