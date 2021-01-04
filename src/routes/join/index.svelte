@@ -142,8 +142,8 @@
 <section class="center" style="margin-bottom: 2.5em;">
   <h2>Who We're Looking For</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut distinctio ad illo dignissimos voluptatem
-    temporibus. In, voluptatibus eum quia, accusantium atque, natus minus placeat rem magni commodi reiciendis repellat!
+    If you love to create projects that have a real impact on the community, then we want you on our team!
+    All students are welcome to apply for any open positions, not limited by major or academic year.
   </p>
 </section>
 <section class="center">
@@ -153,8 +153,8 @@
       <img src="icons/software.svg" alt="" />
       <h3>Software Developer</h3>
       <p>
-        The needs of the student body come above all else. The projects that we develop are created to provide utility
-        for current and future students.
+        As a software developer, you will be writing the API’s and websites that bring our product ideas to life.
+        You'll work with the storage, processing, and delivery of the data that powers our applications.
       </p>
       <div class="button-wrapper"><a href="/join/software" class="button">Apply</a></div>
     </div>
@@ -162,8 +162,8 @@
       <img src="icons/sitemap.svg" alt="" />
       <h3>UI/UX Designer</h3>
       <p>
-        Projects tackle the specific needs of our community. We are clear and transparent in our projects,
-        organizational goals, and want to see these values in our members.
+        As a UI/UX designer, you will be responsible for designing the look and feel of our products.
+        You'll  work with UI tools and talk with student users to create the best possible application experience.
       </p>
       <div class="button-wrapper"><a href="/join/design" class="button">Apply</a></div>
     </div>
