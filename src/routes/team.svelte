@@ -141,10 +141,11 @@
   </article>
 </section>
 
-<section class="center">
+<section class="center recruiting-open">
   <h2 style="margin-bottom: 0">Join Us</h2>
   <p>
-    If you'd like to be part of our team, apply today! We're always looking for talented developers and designers to help us create new products.
+    If you'd like to be part of our team, apply below. We're always looking for talented developers and designers to
+    help us create new products.
   </p>
   <div class="button-wrapper"><a href="/join" class="button">Join Us</a></div>
 </section>

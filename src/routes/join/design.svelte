@@ -102,11 +102,13 @@
 
 <section style="max-width: 800px;">
   <p>
-    As an UI/UX Designer for Illinois Labs, you will be responsible for delivering the best user experience for the
-    students that use our products. On the team, you will work in a collaborative coding environment and have ownership
-    of user-facing features on these applications. You will be designing user interfaces by keeping both users and
-    development requirements in mind.
-    <strong>Expect to put in 5-10 hours of work per week.</strong>
+    UI/UX Designers at Illinois Labs are be responsible for delivering the best user experience for the students that
+    use our products. This involves producing wireframes and high fidelity prototypes as well as user research when
+    appropriate.
+  </p>
+  <p>
+    You will be designing user interfaces by keeping both users and development requirements in mind. Be ready to put in
+    5-10 hours of work per week
   </p>
   <h4>Preferred Qualifications</h4>
   <ul>

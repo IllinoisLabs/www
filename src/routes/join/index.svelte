@@ -142,8 +142,8 @@
 <section class="center" style="margin-bottom: 2.5em;">
   <h2>Who We're Looking For</h2>
   <p>
-    If you love to create projects that have a real impact on the community, then we want you on our team!
-    All students are welcome to apply for any open positions, not limited by major or academic year.
+    If you love applying technical skills alongside product sense to projects that have a real impact on the community,
+    then apply below.
   </p>
 </section>
 <section class="center">
@@ -152,19 +152,13 @@
     <div>
       <img src="icons/software.svg" alt="" />
       <h3>Software Developer</h3>
-      <p>
-        As a software developer, you will be writing the API’s and websites that bring our product ideas to life.
-        You'll work with the storage, processing, and delivery of the data that powers our applications.
-      </p>
+      <p>Engineer ideas that bring product to life. Work with the end-to-end tech that powers our applications.</p>
       <div class="button-wrapper"><a href="/join/software" class="button">Apply</a></div>
     </div>
     <div>
       <img src="icons/sitemap.svg" alt="" />
       <h3>UI/UX Designer</h3>
-      <p>
-        As a UI/UX designer, you will be responsible for designing the look and feel of our products.
-        You'll  work with UI tools and talk with student users to create the best possible application experience.
-      </p>
+      <p>Design the look and feel of products by working with prototyping tools and conducting user research.</p>
       <div class="button-wrapper"><a href="/join/design" class="button">Apply</a></div>
     </div>
   </article>

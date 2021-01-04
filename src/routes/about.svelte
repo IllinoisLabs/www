@@ -244,9 +244,6 @@
 
 <section class="center">
   <h2>Our Team</h2>
-  <p>
-    We are dedicated to making the best possible product while making sure every member has ownership over at least one
-    feature.
-  </p>
+  <p>Our mission and values are held and made possible by our team of student developers.</p>
   <div class="button-wrapper"><a href="/team" class="button" rel="prefetch">Check Out Our Team</a></div>
 </section>

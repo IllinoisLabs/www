@@ -129,11 +129,13 @@
 
 <section style="max-width: 800px;">
   <p>
-    As a software developer for Illinois Labs, you will work in a collaborative coding environment to develop web
-    applications that make students lives better on campus. On the team, you will work in a collaborative coding
-    environment and have ownership of user-facing features on these applications. You will also be involved in directing
-    system / application testing, coming up with new ideas, improving features of existing applications, and are
-    expected to put in 5-10 hours of work per week.
+    Software developers at Illinois Labs work in a collaborative coding environment to develop web applications that
+    improve student life. Within the team, you will have ownership of certain user-facing features on these
+    applications.
+  </p>
+  <p>
+    You will also be involved in testing, coming up with new ideas and improving features of existing applications. Be
+    ready to put in up to 10 hours of work per week.
   </p>
   <h4>Preferred Qualifications</h4>
   <ul>
