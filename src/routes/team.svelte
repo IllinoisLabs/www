@@ -144,9 +144,7 @@
 <section class="center">
   <h2 style="margin-bottom: 0">Join Us</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta reprehenderit quidem nisi nobis laborum, natus
-    necessitatibus amet adipisci vero quisquam quibusdam dignissimos id, itaque beatae officia quo, repellendus
-    voluptatibus non.
+    If you'd like to be part of our team, apply today! We're always looking for talented developers and designers to help us create new products.
   </p>
   <div class="button-wrapper"><a href="/join" class="button">Join Us</a></div>
 </section>
