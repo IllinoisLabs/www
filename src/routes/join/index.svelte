@@ -139,13 +139,6 @@
   title="Join Us"
   desc="Interested in joining a team of engineers and product-owners building tools for our community? Apply Below."
   graphicSrc="/joinus.svg" />
-<section class="center" style="margin-bottom: 2.5em;">
-  <h2>Who We're Looking For</h2>
-  <p>
-    If you love applying technical skills alongside product sense to projects that have a real impact on the community,
-    then apply below.
-  </p>
-</section>
 <section class="center">
   <h2>Open Positions</h2>
   <article class="card-grid">
