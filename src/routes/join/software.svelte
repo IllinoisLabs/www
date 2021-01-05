@@ -155,5 +155,6 @@
 </section>
 
 <section>
-  <Form {formData} />
+  <!-- <Form {formData} /> -->
+  <p>Currently closed.</p>
 </section>
