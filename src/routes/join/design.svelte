@@ -137,7 +137,7 @@
   </p>
 </section>
 
-<section>
+<section class="center">
   <!-- <Form {formData} /> -->
-  <p>Currently closed.</p>
+  <h2>Currently closed.</h2>
 </section>
