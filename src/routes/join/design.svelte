@@ -75,7 +75,7 @@
         allowMultiple: false,
       } as FormBlockSelect,
       {
-        name: 'process',
+        name: 'team',
         label: 'What kind of team environment do you prefer?',
         required: true,
         options: [
@@ -151,6 +151,4 @@
   </p>
 </section>
 
-<section class="center">
-  <Form {formData} />
-</section>
+<Form {formData} />

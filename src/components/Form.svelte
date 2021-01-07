@@ -90,8 +90,6 @@
       };
     }
   }
-
-  $: console.log(formValues);
 </script>
 
 <style>
@@ -298,6 +296,7 @@
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 0;
+    opacity: 1;
   }
 
   .success p:nth-child(2) {
@@ -307,6 +306,7 @@
     display: block;
     font-size: 18px;
     font-weight: 700;
+    opacity: 1;
   }
 </style>
 
