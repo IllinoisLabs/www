@@ -319,7 +319,7 @@
     {/if}
 
     {#if formStatus !== 'success'}
-      <form on:submit={handleSubmit} action="#" name="contact" data-netlify="true">
+      <form on:submit={handleSubmit} action="#" name={formData.formName} data-netlify="true">
         <input type="hidden" name={formData.formName} value={formData.formName} />
         {#each blocks as block}
           <div class="form-block">
