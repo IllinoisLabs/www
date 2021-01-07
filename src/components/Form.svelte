@@ -80,17 +80,16 @@
   }
 
   function handleFileInput(e) {
-    if (e?.target?.name && e?.target?.files) {
-      const fileName = e.target.files[0];
-      const tempUploadName = e.target.name;
-
-      // save data url
-      let reader = new FileReader();
-      reader.readAsDataURL(fileName);
-      reader.onload = (e) => {
-        formValues[tempUploadName] = e.target.result;
-      };
-    }
+    // if (e?.target?.name && e?.target?.files) {
+    //   const fileName = e.target.files[0];
+    //   const tempUploadName = e.target.name;
+    //   // save data url
+    //   let reader = new FileReader();
+    //   reader.readAsDataURL(fileName);
+    //   reader.onload = (e) => {
+    //     formValues[tempUploadName] = e.target.result;
+    //   };
+    // }
   }
 </script>
 
@@ -253,25 +252,25 @@
     border-color: var(--blue) !important;
   } */
 
-  input[type='submit'] {
-    display: inline-flex !important;
+  button[type='submit'] {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 9em !important;
+    width: 9em;
     height: 3em;
     font-size: 16px;
     border-radius: 0.5em;
     background-color: var(--blue);
     font-family: var(--font-stack);
-    color: white !important;
+    color: white;
     margin-right: 1em;
     margin-top: 1.5em;
-    font-weight: 700 !important;
-    border: none !important;
+    font-weight: 700;
+    border: none;
     cursor: pointer;
   }
 
-  input[type='submit'] + p {
+  button[type='submit'] + p {
     opacity: 1;
     height: 3em;
     margin: 0;
@@ -397,7 +396,13 @@
           </div>
         {/each}
         <div>
-          <input type="submit" disabled={loading} value="Submit" />
+          <button type="submit" disabled={loading}>
+            <Icon
+              data={loading ? spinner : paperPlane}
+              spin={loading}
+              style="margin-right: 0.75em; margin-left: -0.5em" />
+            Submit
+          </button>
           {#if formStatus === 'error'}
             <p>
               <Icon data={exclamationTriangle} style="margin-right: 0.5em" />
