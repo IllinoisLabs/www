@@ -16,9 +16,11 @@
     loading: boolean = false;
 
   const encode = (data) => {
-    return Object.keys(data)
+    const toReturn = Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
       .join('&');
+    console.log(toReturn);
+    return toReturn;
   };
   function handleSubmit(e) {
     e.preventDefault();
@@ -251,25 +253,25 @@
     border-color: var(--blue) !important;
   } */
 
-  button[type='submit'] {
-    display: inline-flex;
+  input[type='submit'] {
+    display: inline-flex !important;
     justify-content: center;
     align-items: center;
-    width: 9em;
+    width: 9em !important;
     height: 3em;
     font-size: 16px;
     border-radius: 0.5em;
     background-color: var(--blue);
     font-family: var(--font-stack);
-    color: white;
+    color: white !important;
     margin-right: 1em;
     margin-top: 1.5em;
-    font-weight: 700;
-    border: none;
+    font-weight: 700 !important;
+    border: none !important;
     cursor: pointer;
   }
 
-  button[type='submit'] + p {
+  input[type='submit'] + p {
     opacity: 1;
     height: 3em;
     margin: 0;
@@ -319,7 +321,7 @@
     {/if}
 
     {#if formStatus !== 'success'}
-      <form on:submit={handleSubmit} method="post"  name={formData.formName} data-netlify="true">
+      <form on:submit={handleSubmit} method="post" name={formData.formName} data-netlify="true">
         <input type="hidden" name="form-name" value={formData.formName} />
         {#each blocks as block}
           <div class="form-block">
@@ -383,6 +385,7 @@
                 id={block.name}
                 on:change={handleFileInput}
                 bind:value={block.value}
+                required={block.required}
                 accept={block.acceptableTypes !== null ? block.acceptableTypes.join(', ') : undefined} />
               <label for={block.name} style="opacity: 1">
                 <div class="fake-upload">
@@ -394,13 +397,7 @@
           </div>
         {/each}
         <div>
-          <button type="submit" disabled={loading}>
-            <Icon
-              data={loading ? spinner : paperPlane}
-              spin={loading}
-              style="margin-right: 0.75em; margin-left: -0.5em" />
-            Submit
-          </button>
+          <input type="submit" disabled={loading} value="Submit" />
           {#if formStatus === 'error'}
             <p>
               <Icon data={exclamationTriangle} style="margin-right: 0.5em" />

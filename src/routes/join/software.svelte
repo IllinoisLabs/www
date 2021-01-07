@@ -41,6 +41,13 @@
         placeholder: 'https://linkedin.com/in/example',
       } as FormBlockInput,
       {
+        name: 'github',
+        label: 'GitHub',
+        type: 'url',
+        required: false,
+        placeholder: 'https://github.com/example',
+      } as FormBlockInput,
+      {
         name: 'website',
         label: 'Personal Website',
         type: 'url',
