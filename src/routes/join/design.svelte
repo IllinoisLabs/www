@@ -43,7 +43,7 @@
       {
         name: 'website',
         label: 'Personal Portfolio Link',
-        desc: 'Strongly recommended!Feel free to link any profile you think best represents your work.',
+        desc: 'Strongly recommended! Feel free to link any profile you think best represents your work.',
         type: 'url',
         required: false,
         placeholder: 'https://example.com',
