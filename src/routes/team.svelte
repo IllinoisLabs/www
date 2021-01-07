@@ -75,13 +75,13 @@
   }
 
   article.split-pane figure {
-    flex: 1;
+    flex: 3;
     display: flex;
     align-items: flex-start;
   }
 
   article.split-pane div {
-    flex: 3;
+    flex: 7;
   }
 
   @media only screen and (max-width: 760px) {
@@ -111,7 +111,7 @@
   <img src="logos/companies-sm.svg" alt="" class="mobile" draggable="false" />
 </section>
 <br />
-<section>
+<section class="center">
   <h2>How We Work</h2>
   <article class="split-pane">
     <div>
@@ -128,7 +128,7 @@
         organization.
       </p>
     </div>
-    <figure><img src="/about.svg" alt="about graphic" /></figure>
+    <figure><img src="/speak.svg" alt="" /></figure>
   </article>
 </section>
 

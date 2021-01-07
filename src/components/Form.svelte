@@ -3,9 +3,17 @@
   import { FormGuards } from '../utils/guards';
 
   import Icon from 'svelte-awesome/components/Icon.svelte';
-  import { upload } from 'svelte-awesome/icons';
+  import { upload, exclamationTriangle, checkCircle, spinner, paperPlane } from 'svelte-awesome/icons';
 
   export let formData: { formLabel: string; formName: string; formDesc?: string; blocks: FormBlock[] };
+
+  const { blocks } = formData;
+
+  type status = 'inprogress' | 'success' | 'error';
+
+  let formValues = {},
+    formStatus: status = 'inprogress',
+    loading: boolean = false;
 
   const encode = (data) => {
     return Object.keys(data)
@@ -14,38 +22,96 @@
   };
   function handleSubmit(e) {
     e.preventDefault();
+    loading = true;
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ [formData.formName]: 'contact', ...formData }),
+      body: encode({ 'form-name': formData.formName, ...formValues }),
     })
-      .then(() => alert('Success!'))
-      .catch((error) => alert(error));
+      .then(() => {
+        formStatus = 'success';
+        loading = false;
+      })
+      .catch((error) => {
+        formStatus = 'error';
+        loading = false;
+      });
   }
 
-  let formValues;
-
-  function getFormValues(data: FormBlock[]) {
-    return data.map((e) => ({ [e.name]: '' })).reduce((e, s) => Object.assign(e, s, {}));
+  function handleTextInput(e) {
+    if (e?.target?.name && (e?.target?.value || e?.target?.value === '')) {
+      formValues[e.target.name] = e.target.value;
+      if (e?.target?.value === '') {
+        delete formValues[e.target.name];
+      }
+    }
   }
 
-  $: formValues = getFormValues(formData.blocks);
+  function handleSelectInput(e) {
+    handleTextInput(e);
+  }
+
+  function handleMultiSelectInput(e) {
+    if (e?.target?.name && e?.target?.value && e?.target?.checked !== undefined) {
+      if (formValues[e.target.name] !== undefined) {
+        const idx = formValues[e.target.name].indexOf(e.target.value);
+        if (e.target.checked === true) {
+          if (idx < 0) {
+            formValues[e.target.name].push(e.target.value);
+          }
+        } else {
+          if (idx > -1) {
+            formValues[e.target.name].splice(idx, 1);
+            if (formValues[e.target.name].length === 0) {
+              delete formValues[e.target.name];
+            }
+          }
+        }
+      } else {
+        formValues[e.target.name] = [];
+        if (e.target.checked) {
+          formValues[e.target.name].push(e.target.value);
+        }
+      }
+    }
+  }
+
+  function handleFileInput(e) {
+    if (e?.target?.name && e?.target?.files) {
+      const fileName = e.target.files[0];
+      const tempUploadName = e.target.name;
+
+      // save data url
+      let reader = new FileReader();
+      reader.readAsDataURL(fileName);
+      reader.onload = (e) => {
+        formValues[tempUploadName] = e.target.result;
+      };
+    }
+  }
+
   $: console.log(formValues);
 </script>
 
 <style>
+  .outer-wrap {
+    margin-top: 7.5vh;
+    background-color: #00000005;
+    padding-top: 3vh;
+  }
+
   .wrap {
     display: block;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 30px;
-    background-color: #00000008;
+    padding: 0 30px 7.5vh;
     border-radius: 0.5em;
     max-width: 1000px;
   }
 
   h2 {
-    padding: 1em 0 0;
+    padding: 3.5vh 0;
     text-align: center;
   }
 
@@ -56,7 +122,7 @@
   form {
     width: 100%;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 600px;
   }
 
   form p {
@@ -81,18 +147,23 @@
     margin-bottom: 0;
   }
 
+  input:not([type='text']):not([type='email']):not([type='url']),
+  input + label {
+    cursor: pointer;
+  }
+
   label.header {
     opacity: 1;
   }
 
   input:not([type='radio']):not([type='checkbox']),
   textarea,
-  label.fake-upload {
+  label .fake-upload {
     display: block;
     height: 3em;
     width: 100%;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     font-family: var(--font-stack);
     outline: none;
     box-sizing: border-box;
@@ -102,15 +173,30 @@
     color: var(--text);
   }
 
-  label.fake-upload {
-    display: flex;
+  input[type='file'] ~ label {
+    margin-top: 0.5em;
+    width: auto;
+    display: inline-block;
+  }
+
+  label .fake-upload {
+    display: inline-flex;
     align-items: center;
     cursor: pointer;
+    font-weight: 700;
     background-color: var(--blue);
     color: white;
     border-color: var(--blue);
-    margin: 0.5em 0;
+    margin: 0 0.5em 0.5em 0;
     opacity: 1;
+    width: auto;
+    font-size: 14px;
+    padding: 0 1em;
+  }
+
+  label .fake-upload ~ span {
+    display: inline-flex;
+    align-items: center;
   }
 
   textarea {
@@ -158,13 +244,17 @@
   input[type='file'] {
     display: none !important;
   }
+  /* 
+  input[type='file'] ~ label .fake-upload {
+    display: inline;
+  } */
 
   /* input:focus {
     border-color: var(--blue) !important;
   } */
 
   button[type='submit'] {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 9em;
@@ -174,60 +264,159 @@
     background-color: var(--blue);
     font-family: var(--font-stack);
     color: white;
+    margin-right: 1em;
     margin-top: 1.5em;
     font-weight: 700;
     border: none;
     cursor: pointer;
   }
+
+  button[type='submit'] + p {
+    opacity: 1;
+    height: 3em;
+    margin: 0;
+    display: inline-flex;
+    color: var(--red);
+    font-weight: 700;
+    align-items: center;
+  }
+
+  .success {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .success p:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .success > p:first-child {
+    color: var(--green);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  .success p:nth-child(2) {
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+  }
 </style>
 
-<div class="wrap">
-  <h2>{formData.formLabel}</h2>
+<div class="outer-wrap">
+  <div class="wrap">
+    <h2>{formData.formLabel}</h2>
 
-  {#if formData.formDesc}
-    <p>{formData.formDesc}</p>
-  {/if}
+    {#if formData.formDesc}
+      <p>{formData.formDesc}</p>
+    {/if}
 
-  <form on:submit={handleSubmit} action="POST" name="contact" data-netlify="true">
-    <input type="hidden" name={formData.formName} value={formData.formName} />
-    {#each formData.blocks as block}
-      <div class="form-block">
-        <label class={`header ${block.required ? 'required' : ''}`} for={block.name}>{block.label}</label>
-        {#if block.desc}
-          <p>{block.desc}</p>
-        {/if}
-        {#if FormGuards.isFormBlockInput(block)}
-          <input
-            name={block.name}
-            id={block.name}
-            placeholder={block.placeholder}
-            type={block.type ? block.type : 'text'}
-            required={block.required} /><span />
-        {:else if FormGuards.isFormBlockSelect(block)}
-          {#each block.options as option}
-            <input
-              type={block.allowMultiple ? 'checkbox' : 'radio'}
-              name={block.name}
-              id={block.name + option}
-              required={block.allowMultiple ? false : block.required}
-              value={option} />
-            <label style="display: inline; margin-left: 0.5em;" for={block.name + option}>{option}</label>
-            <br />
-          {/each}
-        {:else if FormGuards.isFormBlockTextArea(block)}
-          <textarea name={block.name} placeholder={' '} id={block.name} cols="30" rows={block.rows} />
-        {:else if FormGuards.isFromBlockUpload(block)}
-          <input
-            type="file"
-            name={block.name}
-            id={block.name}
-            accept={block.acceptableTypes !== null ? block.acceptableTypes.join(', ') : undefined} />
-          <label for={block.name} class="fake-upload"><Icon data={upload} style="margin-right: 0.5em" />
-            Upload File</label>
-        {/if}
+    {#if formStatus !== 'success'}
+      <form on:submit={handleSubmit} action="#" name="contact" data-netlify="true">
+        <input type="hidden" name={formData.formName} value={formData.formName} />
+        {#each blocks as block}
+          <div class="form-block">
+            <label class={`header ${block.required ? 'required' : ''}`} for={block.name}>{block.label}</label>
+            {#if block.desc}
+              <p style="font-weight: 400; font-size: 1em; line-height: 1.5; margin-bottom: 0.5em; margin-top: 0.175em">
+                {block.desc}
+              </p>
+            {/if}
+            {#if FormGuards.isFormBlockInput(block)}
+              {#if block.type && block.type == 'email'}
+                <input
+                  name={block.name}
+                  id={block.name}
+                  on:input={handleTextInput}
+                  placeholder={block.placeholder}
+                  type="email"
+                  required={block.required} /><span />
+              {:else if block.type && block.type == 'url'}
+                <input
+                  name={block.name}
+                  id={block.name}
+                  on:input={handleTextInput}
+                  placeholder={block.placeholder}
+                  type="url"
+                  required={block.required} /><span />
+              {:else}
+                <input
+                  name={block.name}
+                  id={block.name}
+                  on:input={handleTextInput}
+                  placeholder={block.placeholder}
+                  type="text"
+                  required={block.required} /><span />
+              {/if}
+            {:else if FormGuards.isFormBlockSelect(block)}
+              {#each block.options as option}
+                <input
+                  type={block.allowMultiple ? 'checkbox' : 'radio'}
+                  name={block.name}
+                  id={block.name + option}
+                  required={block.allowMultiple ? false : block.required}
+                  value={option}
+                  on:change={block.allowMultiple ? handleMultiSelectInput : handleSelectInput} /><label
+                  style="display: inline-block; padding-left: 0.5em; margin: 0;"
+                  for={block.name + option}>{option}</label>
+                <br />
+              {/each}
+            {:else if FormGuards.isFormBlockTextArea(block)}
+              <textarea
+                name={block.name}
+                placeholder={' '}
+                on:input={handleTextInput}
+                id={block.name}
+                cols="30"
+                rows={block.rows} />
+            {:else if FormGuards.isFromBlockUpload(block)}
+              <input
+                type="file"
+                name={block.name}
+                id={block.name}
+                on:change={handleFileInput}
+                bind:value={block.value}
+                accept={block.acceptableTypes !== null ? block.acceptableTypes.join(', ') : undefined} />
+              <label for={block.name} style="opacity: 1">
+                <div class="fake-upload">
+                  <Icon data={upload} style="margin-right: 0.5em" />
+                  Upload File
+                </div>
+                <span>{block.value ? block.value.split('\\').pop() : ''}</span></label>
+            {/if}
+          </div>
+        {/each}
+        <div>
+          <button type="submit" disabled={loading}>
+            <Icon
+              data={loading ? spinner : paperPlane}
+              spin={loading}
+              style="margin-right: 0.75em; margin-left: -0.5em" />
+            Submit
+          </button>
+          {#if formStatus === 'error'}
+            <p>
+              <Icon data={exclamationTriangle} style="margin-right: 0.5em" />
+              <span>Error in submission. Try again.</span>
+            </p>
+          {/if}
+        </div>
+      </form>
+    {:else if formStatus === 'success'}
+      <div class="success">
+        <p>
+          <Icon data={checkCircle} scale={2.5} style="margin-right: 0.25em" />
+          Succesfully Submitted!
+        </p>
+        <p>We hope to get back to you soon.</p>
       </div>
-    {/each}
-
-    <button type="submit">Submit</button>
-  </form>
+    {/if}
+  </div>
 </div>

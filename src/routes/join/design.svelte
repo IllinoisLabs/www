@@ -34,9 +34,16 @@
         placeholder: 'she/her/hers',
       } as FormBlockInput,
       {
+        name: 'linkedin',
+        label: 'LinkedIn',
+        type: 'url',
+        required: false,
+        placeholder: 'https://linkedin.com/in/example',
+      } as FormBlockInput,
+      {
         name: 'website',
         label: 'Personal Portfolio Link',
-        desc: 'Strongly recommended!',
+        desc: 'Strongly recommended!Feel free to link any profile you think best represents your work.',
         type: 'url',
         required: false,
         placeholder: 'https://example.com',
@@ -44,8 +51,7 @@
       {
         name: 'resume',
         label: 'Resume',
-        desc: 'Not required, but strongly recommended.',
-        required: false,
+        required: true,
         acceptableTypes: null,
       } as FormBlockUpload,
       {
@@ -89,8 +95,16 @@
 </script>
 
 <style>
-  p {
+  h4 {
+    font-family: var(--font-stack);
+    font-weight: 700;
+    margin-top: 0.5em;
+  }
+
+  p,
+  ul > li {
     opacity: 1;
+    font-weight: 400;
   }
 </style>
 
@@ -100,15 +114,15 @@
 
 <Header title="UI/UX Design @ Illinois Labs" />
 
-<section style="max-width: 800px;">
+<section style="max-width: 600px;">
   <p>
     UI/UX Designers at Illinois Labs are be responsible for delivering the best user experience for the students that
     use our products. This involves producing wireframes and high fidelity prototypes as well as user research when
     appropriate.
   </p>
   <p>
-    You will be designing user interfaces by keeping both users and development requirements in mind. Be ready to put in
-    5-10 hours of work per week
+    You will be designing user interfaces by keeping both users and development requirements in mind.
+    <strong>Be ready to put in up to 10 hours per week.</strong>
   </p>
   <h4>Preferred Qualifications</h4>
   <ul>
@@ -131,13 +145,12 @@
     <li>Experience with branding design.</li>
   </ul>
   <p>
-    All applicants are welcome, and you'll hear back from us shortly!
+    <strong>All applicants are welcome, and you'll hear back from us shortly! Apply below.</strong>
     <br />
     Attaching or linking a portfolio of work is optional, but strongly recommended.
   </p>
 </section>
 
 <section class="center">
-  <!-- <Form {formData} /> -->
-  <h2>Currently closed.</h2>
+  <Form {formData} />
 </section>

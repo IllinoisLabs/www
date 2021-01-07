@@ -49,7 +49,7 @@
   .card-grid {
     margin: 3.5em auto 0;
     display: flex;
-    max-width: 760px;
+    max-width: 660px;
   }
 
   .card-grid > div {

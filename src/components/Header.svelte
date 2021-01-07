@@ -2,6 +2,7 @@
   export let title: string;
   export let desc: string;
   export let graphicSrc: string;
+  export let width: number;
 </script>
 
 <style>
@@ -68,7 +69,7 @@
 {#if desc && graphicSrc}
   <div class="wrap">
     <section>
-      <div class="desc">
+      <div class="desc" style={width ? `max-width: ${width}px` : ''}>
         <h1>{title}</h1>
         {#if desc}
           <p class="headline">{desc}</p>

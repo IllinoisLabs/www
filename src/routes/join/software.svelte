@@ -34,17 +34,23 @@
         placeholder: 'she/her/hers',
       } as FormBlockInput,
       {
-        name: 'website',
-        label: 'Personal Website or LinkedIn',
+        name: 'linkedin',
+        label: 'LinkedIn',
         type: 'url',
         required: false,
         placeholder: 'https://linkedin.com/in/example',
       } as FormBlockInput,
       {
+        name: 'website',
+        label: 'Personal Website',
+        type: 'url',
+        required: false,
+        placeholder: 'https://example.com',
+      } as FormBlockInput,
+      {
         name: 'resume',
         label: 'Resume',
-        desc: 'Not required, but strongly recommended.',
-        required: false,
+        required: true,
         acceptableTypes: null,
       } as FormBlockUpload,
       {
@@ -77,7 +83,8 @@
       {
         name: 'specialization',
         label: 'Do you have a specialization?',
-        desc: 'This is NOT a required question, being a generalist is perfectly fine!',
+        desc:
+          'A specialization entails demonstrated and extensive experience. This is NOT a required question, being a generalist is perfectly fine!',
         required: false,
         options: [
           'Not Applicable',
@@ -116,8 +123,16 @@
 </script>
 
 <style>
-  p {
+  h4 {
+    font-family: var(--font-stack);
+    font-weight: 700;
+    margin-top: 0.5em;
+  }
+
+  p,
+  ul > li {
     opacity: 1;
+    font-weight: 400;
   }
 </style>
 
@@ -125,17 +140,17 @@
   <title>Software Developer Application | Illinois Labs</title>
 </svelte:head>
 
-<Header title="Software Development @ Illinois Labs" />
+<Header title="Software Development at Illinois Labs" width={600} />
 
-<section style="max-width: 800px;">
+<section style="max-width: 600px;">
   <p>
     Software developers at Illinois Labs work in a collaborative coding environment to develop web applications that
     improve student life. Within the team, you will have ownership of certain user-facing features on these
     applications.
   </p>
   <p>
-    You will also be involved in testing, coming up with new ideas and improving features of existing applications. Be
-    ready to put in up to 10 hours of work per week.
+    You will also be involved in testing, coming up with new ideas and improving features of existing applications.
+    <strong>Be ready to put in up to 10 hours of work per week.</strong>
   </p>
   <h4>Preferred Qualifications</h4>
   <ul>
@@ -151,10 +166,7 @@
       visualization, or another sub-discipline.
     </li>
   </ul>
-  <p>All applicants are welcome, and you'll hear back from us shortly!</p>
+  <p><strong>All applicants are welcome, and you'll hear back from us shortly! Apply below.</strong></p>
 </section>
 
-<section class="center">
-  <!-- <Form {formData} /> -->
-  <h2>Currently closed.</h2>
-</section>
+<Form {formData} />

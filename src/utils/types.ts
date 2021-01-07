@@ -27,6 +27,7 @@ export interface FormBlock {
   name: string;
   required: boolean;
   desc?: string;
+  value?: string;
 }
 
 export interface FormBlockTextArea extends FormBlock {

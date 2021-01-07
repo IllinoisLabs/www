@@ -48,12 +48,12 @@
   }
 
   section div:nth-child(1) {
-    flex: 3;
+    flex: 1;
   }
 
   section div:nth-child(2) {
-    flex: 2;
-    margin-left: 4em;
+    flex: 1;
+    margin-left: var(--mg);
   }
 
   @media only screen and (max-width: 885px) {
@@ -78,6 +78,6 @@
         motivated developers and UI/UX designers.
       </p>
     </div>
-    <div><img src="/about.svg" alt="about graphic" /></div>
+    <div><img src="/blurcards.svg" alt="about graphic" /></div>
   </section>
 </div>

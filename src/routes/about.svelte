@@ -109,35 +109,6 @@
       margin: 1em auto 2em;
     }
   }
-
-  /* #values {
-    list-style: none;
-    padding: 0;
-    margin: 1.5em 0 2.5em;
-  }
-
-  #values li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5em;
-  }
-
-  #values li > * > h3 {
-    font-family: var(--font-stack);
-  }
-
-  #values li > * > p {
-    margin: 0;
-  }
-
-  #values li img {
-    width: 5em;
-    margin-right: var(--mg);
-  }
-
-  #values li img ~ * {
-    display: block;
-  } */
 </style>
 
 <svelte:head>
@@ -164,16 +135,16 @@
       <img src="icons/opensource.svg" alt="" />
       <h3>Open Source</h3>
       <p>
-        All of our project source code is made publically available. Any and all students should be able to see what
-        powers the applications we make to help them and be able to address all concerns.
+        All of our project source code is made publically available. Students should see what powers the applications
+        that help them and be able to address concerns.
       </p>
     </div>
     <div>
       <img src="icons/arrow.svg" alt="" />
       <h3>Be Concise</h3>
       <p>
-        Projects tackle the specific needs of our community. We are clear and transparent in our projects,
-        organizational goals, and want to see these values in our members.
+        Projects tackle the specific needs of our community. We are clear and transparent in our goals, and want to see
+        these values in our members.
       </p>
     </div>
   </article>
@@ -199,48 +170,6 @@
     <figure><img src="/draguser.svg" alt="" /></figure>
   </div>
 </section>
-
-<!-- <section>
-  <h2>Guiding Values</h2>
-  <article>
-    <p>
-      Our organization and practices surround our values. This system is still in its infancy, but the current building
-      blocks of our values can be seen below.
-    </p>
-    <ul id="values">
-      <li>
-        <img src="icons/people.svg" alt="" />
-        <div>
-          <h3>Students-First</h3>
-          <p>
-            The needs of the student body come above all else. The projects that we develop are created to provide
-            utility for current and future students.
-          </p>
-        </div>
-      </li>
-      <li>
-        <img src="icons/opensource.svg" alt="" />
-        <div>
-          <h3>Open Source</h3>
-          <p>
-            All of our project source code is made publically available. Any and all students should be able to see what
-            powers the applications we make to help them and be able to address all concerns.
-          </p>
-        </div>
-      </li>
-      <li>
-        <img src="icons/arrow.svg" alt="" />
-        <div>
-          <h3>Be Concise</h3>
-          <p>
-            Projects tackle the specific needs of our community. We are clear and transparent in our projects,
-            organizational goals, and want to see these values in our members.
-          </p>
-        </div>
-      </li>
-    </ul>
-  </article>
-</section> -->
 
 <section class="center">
   <h2>Our Team</h2>

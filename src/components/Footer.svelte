@@ -3,16 +3,32 @@
 </script>
 
 <style>
+  /* .wrap {
+    background-color: var(--off-white);
+  } */
+
+  #logo {
+    font-family: var(--header-stack);
+  }
+
+  #logo + p {
+    margin: 0;
+  }
+
   footer {
-    min-height: 4em;
-    display: flex;
-    align-items: center;
+    display: block;
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 2em auto;
     width: 95%;
     padding: 0 2em;
+    border-radius: 0.5em;
     box-sizing: border-box;
   }
 </style>
 
-<footer>&copy; {year} Illinois Labs.</footer>
+<div class="wrap">
+  <footer>
+    <!-- <div id="logo">Illinois Labs</div> -->
+    <p>&copy; {year} Illinois Labs. Contact us at <a href="mailto:hello@ilinoislabs.org">hello@illinoislabs.org</a></p>
+  </footer>
+</div>
