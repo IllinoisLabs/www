@@ -135,6 +135,19 @@
       width: 100%;
     }
 
+    div.wrap {
+      transition: none;
+    }
+
+    div.wrap.scrolled {
+      padding: 0;
+    }
+
+    nav.scrolled {
+      width: 100%;
+      border-radius: 0;
+    }
+
     #mobile-menu {
       display: block;
       width: 100%;
@@ -152,8 +165,8 @@
       display: block;
     }
 
-    #mobile-meun > li a {
-      justify-content: flex-start;
+    #mobile-menu > li a {
+      justify-content: center;
     }
 
     nav > ul {
@@ -175,7 +188,14 @@
     .open-mm div.wrap.scrolled,
     .open-mm div.wrap {
       position: fixed;
+    }
+
+    .open-mm div.wrap {
       padding-top: 2em;
+    }
+
+    .open-mm div.wrap.scrolled {
+      padding-top: 0;
     }
 
     li > a {

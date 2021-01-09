@@ -17,7 +17,7 @@
     background-color: var(--off-white);
     border-radius: 0 0 var(--br) var(--br);
     position: relative;
-    padding-bottom: 7.5em;
+    padding-bottom: 7.5vh;
     margin: 15em var(--mg) 0;
   }
 
@@ -162,6 +162,12 @@
 
   ul > li > a > span {
     margin-left: 0.4em;
+  }
+
+  @media only screen and (max-width: 885px) {
+    ul > li {
+      display: block;
+    }
   }
 </style>
 
