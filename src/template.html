@@ -7,7 +7,156 @@
 
     %sapper.base%
 
-    <link rel="stylesheet" href="global.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krona+One&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* Colors */
+        --blue: #2176ff;
+        --light-blue: #33a1fd;
+        --off-white: #dcf2ff;
+        --orange: #fa5e21;
+        --green: #69cb84;
+        --red: #e15285;
+        --dark: #041633;
+        --text: #041633b2;
+
+        /* text */
+        --font-stack: 'Space Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans,
+          Droid Sans, Helvetica Neue, sans-serif;
+        --header-stack: 'Krona One', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans,
+          Droid Sans, Helvetica Neue, sans-serif;
+
+        /* Page Sections */
+        --br: 0.75em;
+        --mg: min(1.25em, 2.5vw);
+      }
+
+      body {
+        margin: 0;
+        font-weight: 400;
+        font-family: var(--font-stack);
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--text);
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      section {
+        max-width: 1100px;
+        width: 95%;
+        margin: 0 auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--header-stack);
+        margin: 0 0 0.5em 0;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        opacity: 0.8;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      code {
+        font-family: menlo, inconsolata, monospace;
+        font-size: calc(1em - 2px);
+        color: #555;
+        background-color: #f0f0f0;
+        padding: 0.2em 0.4em;
+        border-radius: 2px;
+      }
+
+      a.button {
+        padding: 0.5em 1.25em 0.5em 1.5em;
+        background-color: var(--blue);
+        font-weight: 600;
+        color: white;
+        border-radius: 2em;
+        text-decoration: none;
+        box-sizing: border-box;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.014), 0 6.7px 5.3px rgba(0, 0, 0, 0.02),
+          0 12.5px 10px rgba(0, 0, 0, 0.025), 0 22.3px 17.9px rgba(0, 0, 0, 0.03), 0 41.8px 33.4px rgba(0, 0, 0, 0.036),
+          0 100px 80px rgba(0, 0, 0, 0.05);
+      }
+
+      a.button.secondary {
+        background-color: inherit;
+        color: var(--blue);
+        box-shadow: none;
+      }
+
+      a.button::after {
+        content: '→';
+        padding-left: 0.35em;
+        padding-right: 0.35em;
+        transition: padding 0.2s ease-in-out;
+      }
+
+      a.button:hover::after {
+        content: '→';
+        padding-left: 0.7em;
+        padding-right: 0;
+      }
+
+      .center > h2,
+      .center > h2 ~ p {
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .center > h2 ~ p {
+        margin: 1em auto;
+        max-width: 720px;
+        color: var(--dark);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .center > .button-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 1.5em auto 3.5em;
+      }
+
+      input::placeholder {
+        opacity: 0.5;
+      }
+
+      @media only screen and (max-width: 850px) {
+        h2 {
+          font-size: 24px;
+        }
+      }
+
+      @media (min-width: 400px) {
+        body {
+          font-size: 16px;
+          line-height: 2;
+        }
+      }
+    </style>
+
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
     <link rel="icon" type="image/png" href="favicon.png" />
 
