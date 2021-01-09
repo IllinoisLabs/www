@@ -2,6 +2,7 @@
   section {
     width: 95%;
     height: 100%;
+    margin-top: -6em;
     padding-bottom: 2em;
     box-sizing: border-box;
     display: flex;
@@ -10,17 +11,17 @@
   }
 
   .wrap {
-    display: block;
+    display: flex;
     background-color: var(--off-white);
     background-image: url('/hero.svg');
     background-position: bottom calc(-100px + 1vw) left;
     background-repeat: repeat-x;
-    padding-top: 10em;
-    min-height: calc(100vh - 10em - 7.5vw);
+    min-height: calc(100vh - 7.5vw);
     margin: var(--mg);
     border-radius: var(--br);
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    align-items: center;
   }
 
   aside {
@@ -28,14 +29,6 @@
     display: block;
     width: 100%;
   }
-
-  /* aside h1 {
-    font-weight: 600;
-    font-size: 24px;
-    color: var(--orange);
-    margin-bottom: 1.2em;
-    font-family: 'Krona One', sans-serif;
-  } */
 
   aside p.big {
     font-weight: 600;
@@ -47,6 +40,7 @@
   aside p {
     font-size: 20px;
     font-weight: 400;
+    line-height: 1.5;
   }
 
   aside:last-child {
@@ -62,6 +56,17 @@
     }
     aside:last-child {
       padding-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    aside p.big {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    aside p {
+      font-size: 18px;
     }
   }
 </style>

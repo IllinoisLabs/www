@@ -6,10 +6,10 @@
 
 <style>
   #members {
-    margin-top: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 1.25em;
+    margin: 1em var(--mg) 0;
   }
 
   article {

@@ -3,24 +3,12 @@
 </script>
 
 <style>
-  /* .wrap {
-    background-color: var(--off-white);
-  } */
-
-  #logo {
-    font-family: var(--header-stack);
-  }
-
-  #logo + p {
-    margin: 0;
-  }
-
   footer {
     display: block;
     max-width: 1300px;
     margin: 2em auto;
     width: 95%;
-    padding: 0 2em;
+    padding: 0;
     border-radius: 0.5em;
     box-sizing: border-box;
   }

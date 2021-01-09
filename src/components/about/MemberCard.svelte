@@ -34,7 +34,7 @@
   }
 
   .info-wrapper {
-    flex: 3;
+    flex: 2.5;
     padding-left: 1em;
   }
 
@@ -67,6 +67,7 @@
   @media only screen and (min-width: 885px) {
     .wrap {
       flex-flow: column;
+      justify-content: center;
       align-items: center;
       padding: 1em;
       text-align: center;
