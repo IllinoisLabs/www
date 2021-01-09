@@ -1,13 +1,39 @@
 <script lang="ts">
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
+  import { exclamationTriangle, checkCircle } from 'svelte-awesome/icons';
 
   let emailInput: HTMLInputElement | undefined;
   let email = '';
   let emailIsValid = false;
+  type status = 'inprogress' | 'success' | 'error';
+  let formStatus: status = 'inprogress';
 
   $: {
     emailIsValid = email && emailInput !== undefined && emailInput.checkValidity();
+  }
+
+  const encode = (data) => {
+    const toReturn = Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+    console.log(toReturn);
+    return toReturn;
+  };
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'mailing-list', email }),
+    })
+      .then(() => {
+        formStatus = 'success';
+      })
+      .catch((error) => {
+        formStatus = 'error';
+      });
   }
 </script>
 
@@ -169,6 +195,30 @@
       display: block;
     }
   }
+
+  #form-success {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--br);
+    background-color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+  }
+
+  #form-error {
+    margin-top: 0.5em;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--br);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--red);
+    font-weight: 600;
+  }
 </style>
 
 <div class="wrap dark">
@@ -177,11 +227,24 @@
     <div>
       <h2>Learn More</h2>
       <h3>Sign-up to our mailing list to keep in touch.</h3>
-      <form class="contact-form" name="mailing" method="POST" data-netlify="true">
-        <input type="hidden" name="mailing-list" value="contact" />
-        <input type="email" name="email" bind:this={emailInput} bind:value={email} placeholder="name@example.com" />
-        <button disabled={!emailIsValid} type="submit">Join</button>
+      <form class="contact-form" name="mailing-list" method="post" data-netlify="true" on:submit={handleSubmit}>
+        <input type="hidden" name="form-name" value="mailing-list" />
+        {#if formStatus === 'inprogress' || formStatus === 'error'}
+          <input type="email" name="email" bind:this={emailInput} bind:value={email} placeholder="name@example.com" />
+          <button disabled={!emailIsValid} type="submit">Join</button>
+        {:else}
+          <div id="form-success">
+            <Icon data={checkCircle} scale={1.25} style="margin-right: 0.25em" />
+            Successfully Submitted!
+          </div>
+        {/if}
       </form>
+      {#if formStatus === 'error'}
+        <div id="form-error">
+          <Icon data={exclamationTriangle} scale={1.25} style="margin-right: 0.25em" />
+          Error. Try again.
+        </div>
+      {/if}
       <h3>Find us elsewhere.</h3>
       <ul>
         <li>

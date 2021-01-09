@@ -19,7 +19,6 @@
     const toReturn = Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
       .join('&');
-    console.log(toReturn);
     return toReturn;
   };
   function handleSubmit(e) {
@@ -232,12 +231,6 @@
   textarea:not(:placeholder-shown) {
     box-shadow: none;
     border-color: var(--green) !important;
-  }
-
-  label.inline-other input:not([type='radio']):not([type='checkbox']) {
-    display: inline-block;
-    border: none;
-    background-color: var(--text);
   }
 
   input[type='file'] {

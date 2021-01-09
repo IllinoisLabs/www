@@ -6,44 +6,12 @@
 </script>
 
 <style>
-  details {
-    padding-bottom: 1em;
-  }
-
-  details p {
-    line-height: 2.6;
-  }
-
-  summary::-webkit-details-marker,
-  summary::marker {
-    color: var(--orange);
-    font-size: 20px;
-    margin-right: 2px;
-  }
-
   h3 {
     font-family: var(--font-stack);
   }
 
   article {
     margin-bottom: 2.5em;
-  }
-
-  summary {
-    padding: 0.65em 0;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
-    border-bottom: 1px solid var(--dark);
-  }
-
-  summary h3 {
-    display: inline;
-    color: var(--dark);
-  }
-
-  summary h3 span {
-    margin: 0 0.75em 0 0.25em;
   }
 
   .card-grid {
