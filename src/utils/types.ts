@@ -22,6 +22,14 @@ export interface post_detailed extends post {
 }
 
 /* Forms */
+
+export interface FormType {
+  formLabel: string;
+  formName: string;
+  formDesc?: string;
+  blocks: FormBlock[];
+}
+
 export interface FormBlock {
   label: string;
   name: string;

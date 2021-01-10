@@ -3,14 +3,14 @@
   import Header from '../../components/Header.svelte';
 
   import type {
-    FormBlock,
+    FormType,
     FormBlockInput,
     FormBlockSelect,
     FormBlockTextArea,
     FormBlockUpload,
   } from '../../utils/types';
 
-  const formData: { formLabel: string; formName: string; formDesc?: string; blocks: FormBlock[] } = {
+  const formData: FormType = {
     formLabel: 'Software Developer Application',
     formName: 'swe-app',
     blocks: [

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { FormBlock } from '../utils/types';
+  import type { FormType } from '../utils/types';
   import { FormGuards } from '../utils/guards';
 
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { upload, exclamationTriangle, checkCircle, spinner, paperPlane } from 'svelte-awesome/icons';
 
-  export let formData: { formLabel: string; formName: string; formDesc?: string; blocks: FormBlock[] };
+  export let formData: FormType;
 
   const { blocks } = formData;
 
@@ -79,16 +79,17 @@
   }
 
   function handleFileInput(e) {
-    // if (e?.target?.name && e?.target?.files) {
-    //   const fileName = e.target.files[0];
-    //   const tempUploadName = e.target.name;
-    //   // save data url
-    //   let reader = new FileReader();
-    //   reader.readAsDataURL(fileName);
-    //   reader.onload = (e) => {
-    //     formValues[tempUploadName] = e.target.result;
-    //   };
-    // }
+    if (e?.target?.name && e?.target?.files) {
+      const fileName = e.target.files[0];
+      const tempUploadName = e.target.name;
+      // save data url
+      // let reader = new FileReader();
+      // reader.readAsDataURL(fileName);
+      // reader.onload = (e) => {
+      //   formValues[tempUploadName] = e.target.result;
+      // };
+      formValues[tempUploadName] = fileName;
+    }
   }
 </script>
 
