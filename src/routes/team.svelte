@@ -97,7 +97,7 @@
 </style>
 
 <svelte:head>
-  <title>Team</title>
+  <title>Team | Illinois Labs</title>
 </svelte:head>
 
 <Header

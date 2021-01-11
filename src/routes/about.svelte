@@ -112,7 +112,7 @@
 </style>
 
 <svelte:head>
-  <title>About</title>
+  <title>About | Illinois Labs</title>
 </svelte:head>
 
 <Header title="About" desc="We are an organization made by students, for students." graphicSrc="/app.svg" />

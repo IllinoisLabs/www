@@ -37,7 +37,7 @@
 </style>
 
 <svelte:head>
-  <title>{status}</title>
+  <title>{status} | Illinois Labs</title>
 </svelte:head>
 
 <div class="wrap">
