@@ -4,7 +4,7 @@ export const members: Member[] = [
   {
     name: 'Siraj Chokshi',
     position: 'Co-Founder & Lead',
-    image: '',
+    image: '/headshots/siraj.jpg',
     website: 'https://sirajchokshi.com',
     linkedin: 'https://linkedin.com/in/sirajchokshi',
     github: 'https://github.com/sirajchokshi',
@@ -20,14 +20,14 @@ export const members: Member[] = [
   {
     name: 'Gene Wang',
     position: 'Software Architect',
-    image: '',
+    image: '/headshots/gene.jpg',
     linkedin: 'https://linkedin.com/in/genewang0',
     github: 'https://github.com/gwang0136',
   },
   {
     name: 'Neeraj Aggarwal',
     position: 'Technical Advisor',
-    image: '',
+    image: '/headshots/neeraj.jpg',
     website: 'https://neeraj.lol',
     linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
     github: 'https://github.com/n3a9',

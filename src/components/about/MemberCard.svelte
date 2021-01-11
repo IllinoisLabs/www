@@ -19,6 +19,7 @@
   img {
     border-radius: 50%;
     width: 100%;
+    position: relative;
 
     user-select: none;
     -moz-user-select: none;
