@@ -7,7 +7,7 @@ This repository contains the code for the Illinois Labs official website.
 This site is made using _Sapper_. For more detailed instructions and information about Sapper, see [SAPPER.MD](https://github.com/IllinoisLabs/www/blob/main/SAPPER.md).
 
 To get this started up locally, run the following commands:
-```
+```bash
 cd www  # if you aren't already in the repository
 npm install  # or yarn
 npm run dev
