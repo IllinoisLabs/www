@@ -11,6 +11,7 @@
   } from '../../utils/types';
 
   const formData: FormType = {
+    isOpen: false,
     formLabel: 'Software Developer Application',
     formName: 'swe-app',
     blocks: [

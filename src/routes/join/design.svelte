@@ -11,6 +11,7 @@
   } from '../../utils/types';
 
   const formData: FormType = {
+    isOpen: false,
     formLabel: 'UI/UX Designer Application',
     formName: 'design-app',
     blocks: [

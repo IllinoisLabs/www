@@ -28,6 +28,7 @@ export interface FormType {
   formName: string;
   formDesc?: string;
   blocks: FormBlock[];
+  isOpen: boolean;
 }
 
 export interface FormBlock {

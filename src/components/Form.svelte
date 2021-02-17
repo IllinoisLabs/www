@@ -3,7 +3,7 @@
   import { FormGuards } from '../utils/guards';
 
   import Icon from 'svelte-awesome/components/Icon.svelte';
-  import { upload, exclamationTriangle, checkCircle, spinner, paperPlane } from 'svelte-awesome/icons';
+  import { upload, exclamationTriangle, checkCircle, timesCircle, spinner, paperPlane } from 'svelte-awesome/icons';
 
   export let formData: FormType;
 
@@ -307,111 +307,122 @@
 
 <div class="outer-wrap">
   <div class="wrap">
-    <h2>{formData.formLabel}</h2>
+    {#if formData.isOpen}
+      <h2>{formData.formLabel}</h2>
 
-    {#if formData.formDesc}
-      <p>{formData.formDesc}</p>
-    {/if}
+      {#if formData.formDesc}
+        <p>{formData.formDesc}</p>
+      {/if}
 
-    {#if formStatus !== 'success'}
-      <form on:submit={handleSubmit} method="post" name={formData.formName} data-netlify="true">
-        <input type="hidden" name="form-name" value={formData.formName} />
-        {#each blocks as block}
-          <div class="form-block">
-            <label class={`header ${block.required ? 'required' : ''}`} for={block.name}>{block.label}</label>
-            {#if block.desc}
-              <p style="font-weight: 400; font-size: 1em; line-height: 1.5; margin-bottom: 0.5em; margin-top: 0.175em">
-                {block.desc}
+      {#if formStatus !== 'success'}
+        <form on:submit={handleSubmit} method="post" name={formData.formName} data-netlify="true">
+          <input type="hidden" name="form-name" value={formData.formName} />
+          {#each blocks as block}
+            <div class="form-block">
+              <label class={`header ${block.required ? 'required' : ''}`} for={block.name}>{block.label}</label>
+              {#if block.desc}
+                <p
+                  style="font-weight: 400; font-size: 1em; line-height: 1.5; margin-bottom: 0.5em; margin-top: 0.175em">
+                  {block.desc}
+                </p>
+              {/if}
+              {#if FormGuards.isFormBlockInput(block)}
+                {#if block.type && block.type == 'email'}
+                  <input
+                    name={block.name}
+                    id={block.name}
+                    on:input={handleTextInput}
+                    placeholder={block.placeholder}
+                    type="email"
+                    required={block.required} /><span />
+                {:else if block.type && block.type == 'url'}
+                  <input
+                    name={block.name}
+                    id={block.name}
+                    on:input={handleTextInput}
+                    placeholder={block.placeholder}
+                    type="url"
+                    required={block.required} /><span />
+                {:else}
+                  <input
+                    name={block.name}
+                    id={block.name}
+                    on:input={handleTextInput}
+                    placeholder={block.placeholder}
+                    type="text"
+                    required={block.required} /><span />
+                {/if}
+              {:else if FormGuards.isFormBlockSelect(block)}
+                {#each block.options as option}
+                  <input
+                    type={block.allowMultiple ? 'checkbox' : 'radio'}
+                    name={block.name}
+                    id={block.name + option}
+                    required={block.allowMultiple ? false : block.required}
+                    value={option}
+                    on:change={block.allowMultiple ? handleMultiSelectInput : handleSelectInput} /><label
+                    style="display: inline-block; padding-left: 0.5em; margin: 0;"
+                    for={block.name + option}>{option}</label>
+                  <br />
+                {/each}
+              {:else if FormGuards.isFormBlockTextArea(block)}
+                <textarea
+                  name={block.name}
+                  placeholder={' '}
+                  on:input={handleTextInput}
+                  id={block.name}
+                  cols="30"
+                  rows={block.rows} />
+              {:else if FormGuards.isFromBlockUpload(block)}
+                <input
+                  type="file"
+                  name={block.name}
+                  id={block.name}
+                  on:change={handleFileInput}
+                  bind:value={block.value}
+                  required={block.required}
+                  accept={block.acceptableTypes !== null ? block.acceptableTypes.join(', ') : undefined} />
+                <label for={block.name} style="opacity: 1">
+                  <div class="fake-upload">
+                    <Icon data={upload} style="margin-right: 0.5em" />
+                    Upload File
+                  </div>
+                  <span>{block.value ? block.value.split('\\').pop() : ''}</span></label>
+              {/if}
+            </div>
+          {/each}
+          <div>
+            <button type="submit" disabled={loading}>
+              <Icon
+                data={loading ? spinner : paperPlane}
+                spin={loading}
+                style="margin-right: 0.75em; margin-left: -0.5em" />
+              Submit
+            </button>
+            {#if formStatus === 'error'}
+              <p>
+                <Icon data={exclamationTriangle} style="margin-right: 0.5em" />
+                <span>Error in submission. Try again.</span>
               </p>
             {/if}
-            {#if FormGuards.isFormBlockInput(block)}
-              {#if block.type && block.type == 'email'}
-                <input
-                  name={block.name}
-                  id={block.name}
-                  on:input={handleTextInput}
-                  placeholder={block.placeholder}
-                  type="email"
-                  required={block.required} /><span />
-              {:else if block.type && block.type == 'url'}
-                <input
-                  name={block.name}
-                  id={block.name}
-                  on:input={handleTextInput}
-                  placeholder={block.placeholder}
-                  type="url"
-                  required={block.required} /><span />
-              {:else}
-                <input
-                  name={block.name}
-                  id={block.name}
-                  on:input={handleTextInput}
-                  placeholder={block.placeholder}
-                  type="text"
-                  required={block.required} /><span />
-              {/if}
-            {:else if FormGuards.isFormBlockSelect(block)}
-              {#each block.options as option}
-                <input
-                  type={block.allowMultiple ? 'checkbox' : 'radio'}
-                  name={block.name}
-                  id={block.name + option}
-                  required={block.allowMultiple ? false : block.required}
-                  value={option}
-                  on:change={block.allowMultiple ? handleMultiSelectInput : handleSelectInput} /><label
-                  style="display: inline-block; padding-left: 0.5em; margin: 0;"
-                  for={block.name + option}>{option}</label>
-                <br />
-              {/each}
-            {:else if FormGuards.isFormBlockTextArea(block)}
-              <textarea
-                name={block.name}
-                placeholder={' '}
-                on:input={handleTextInput}
-                id={block.name}
-                cols="30"
-                rows={block.rows} />
-            {:else if FormGuards.isFromBlockUpload(block)}
-              <input
-                type="file"
-                name={block.name}
-                id={block.name}
-                on:change={handleFileInput}
-                bind:value={block.value}
-                required={block.required}
-                accept={block.acceptableTypes !== null ? block.acceptableTypes.join(', ') : undefined} />
-              <label for={block.name} style="opacity: 1">
-                <div class="fake-upload">
-                  <Icon data={upload} style="margin-right: 0.5em" />
-                  Upload File
-                </div>
-                <span>{block.value ? block.value.split('\\').pop() : ''}</span></label>
-            {/if}
           </div>
-        {/each}
-        <div>
-          <button type="submit" disabled={loading}>
-            <Icon
-              data={loading ? spinner : paperPlane}
-              spin={loading}
-              style="margin-right: 0.75em; margin-left: -0.5em" />
-            Submit
-          </button>
-          {#if formStatus === 'error'}
-            <p>
-              <Icon data={exclamationTriangle} style="margin-right: 0.5em" />
-              <span>Error in submission. Try again.</span>
-            </p>
-          {/if}
+        </form>
+      {:else if formStatus === 'success'}
+        <div class="success">
+          <p>
+            <Icon data={checkCircle} scale={2.5} style="margin-right: 0.25em" />
+            Succesfully Submitted!
+          </p>
+          <p>We hope to get back to you soon.</p>
         </div>
-      </form>
-    {:else if formStatus === 'success'}
+      {/if}
+    {:else}
       <div class="success">
-        <p>
-          <Icon data={checkCircle} scale={2.5} style="margin-right: 0.25em" />
-          Succesfully Submitted!
+        <p style="color: grey">
+          <Icon data={timesCircle} scale={2.5} style="margin-right: 0.25em" />
+          No Longer Accepting Submissions.
         </p>
-        <p>We hope to get back to you soon.</p>
+        <p>Recruitment is at the begining of each semester.<br />We hope to see you early Fall 2021!</p>
       </div>
     {/if}
   </div>

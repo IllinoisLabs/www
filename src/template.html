@@ -149,6 +149,17 @@
         padding-right: 0;
       }
 
+      a.button.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        text-decoration: none;
+        pointer-events: none;
+        user-select: none;
+        box-shadow: none;
+        color: var(--text);
+        background-color: #d9d9d9;
+      }
+
       .center > h2,
       .center > h2 ~ p {
         text-align: center;
