@@ -31,12 +31,18 @@
 
   .image-wrapper {
     display: block;
+    position: relative;
+    max-width: 5em;
     flex: 1;
   }
 
   .info-wrapper {
     flex: 2.5;
     padding-left: 1em;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   h3 {
@@ -72,6 +78,7 @@
       align-items: center;
       padding: 1em;
       text-align: center;
+      height: auto;
     }
 
     .wrap > .image-wrapper {
@@ -80,6 +87,7 @@
 
     .info-wrapper {
       padding: 0;
+      align-items: center;
     }
   }
 </style>
@@ -91,7 +99,7 @@
   <div class="info-wrapper">
     <h3>{member.name}</h3>
     <ul>
-      <li>{member.position}</li>
+      <!-- <li>{member.position}</li> -->
       <li>
         <ul class="inline">
           {#if member.website}

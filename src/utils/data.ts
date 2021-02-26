@@ -32,4 +32,26 @@ export const members: Member[] = [
     linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
     github: 'https://github.com/n3a9',
   },
+  {
+    name: 'Jonathan Shi',
+    position: 'Software Developer',
+    image: '/headshots/jonathan.jpg',
+    linkedin: 'https://www.linkedin.com/in/jonathan-shi-5219b3180/',
+    github: 'https://github.com/jonathanshi568',
+  },
+  {
+    name: 'Mahi Kolla',
+    position: 'Software Developer',
+    image: '/headshots/mahi.jpg',
+    linkedin: 'https://www.linkedin.com/in/mahi-kolla-39422b139/',
+    github: 'https://github.com/24mahik',
+  },
+  {
+    name: 'Praneeth Guduguntla',
+    position: 'Software Developer',
+    image: '/headshots/praneeth.jpg',
+    website: 'http://praneethguduguntla.com',
+    linkedin: 'https://www.linkedin.com/in/praneeth-g-277128133/',
+    github: 'https://github.com/pguduguntla',
+  },
 ];

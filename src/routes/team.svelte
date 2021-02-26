@@ -7,9 +7,13 @@
 <style>
   #members {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 1.25em;
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 0.5em;
     margin: 1em var(--mg) 0;
+  }
+
+  #members > * {
+    grid-column: span 2;
   }
 
   article {
@@ -34,9 +38,31 @@
     margin-bottom: 1em;
   }
 
+  @media only screen and (min-width: 886px) {
+    /* Triple Orphan */
+
+    #members > *:last-child:nth-child(4n - 1) {
+      grid-column: 6 / 8;
+    }
+
+    #members > *:nth-last-child(2):nth-child(4n + 2) {
+      grid-column: 4 / 6;
+    }
+
+    #members > *:nth-last-child(3):nth-child(4n + 1) {
+      grid-column: 2 / 4;
+    }
+  }
+
   @media only screen and (max-width: 885px) {
     #members {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Single Orphan */
+
+    #members > * {
+      grid-column: span 2;
     }
   }
 
@@ -46,9 +72,13 @@
     margin: 1.25em auto 2.5em;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 520px) {
     #members {
       grid-template-columns: 1fr;
+    }
+
+    #members > * {
+      grid-column: span 1;
     }
   }
 
@@ -133,15 +163,17 @@
 </section>
 
 <section class="center">
-  <h2>Leadership</h2>
+  <h2>Our Team</h2>
   <article id="members">
     {#each members as member}
-      <MemberCard {member} />
+      <div>
+        <MemberCard {member} />
+      </div>
     {/each}
   </article>
 </section>
 
-<section class="center recruiting-open">
+<section class="center recruiting-open" style="margin-top: 2.75em">
   <h2 style="margin-bottom: 0">Join Us</h2>
   <p>
     If you'd like to be part of our team, apply below. We're always looking for talented developers and designers to
