@@ -40,6 +40,14 @@ export const members: Member[] = [
     github: 'https://github.com/jonathanshi568',
   },
   {
+    name: 'Leo Galindo',
+    position: 'Software Developer',
+    image: '/headshots/leo.jpg',
+    website: 'http://http://leonardogalindo.me/',
+    linkedin: 'https://www.linkedin.com/in/leonardo-galindo-frias/',
+    github: 'https://github.com/Leundai',
+  },
+  {
     name: 'Mahi Kolla',
     position: 'Software Developer',
     image: '/headshots/mahi.jpg',
