@@ -113,7 +113,7 @@
   <h2>Open Positions</h2>
   <article style="display: flex; justify-content: center; align-items: center; min-height: 20vh">
     <p style="font-weight: 600; font-size: 24px; text-align:center; line-height: 1.5;">
-      Applications are accepted at the begining of each semester.<br />We hope to see you early Fall 2021!
+      Applications are accepted at the beginning of each semester.<br />We hope to see you early Fall 2021!
     </p>
   </article>
   <h2>All Positions</h2>
