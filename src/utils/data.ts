@@ -1,4 +1,4 @@
-import type { Member } from './types';
+import type { Member, url } from './types';
 
 export const members: Member[] = [
   {
@@ -31,6 +31,7 @@ export const members: Member[] = [
     website: 'https://neeraj.lol',
     linkedin: 'https://linkedin.com/in/neeraj-aggarwal',
     github: 'https://github.com/n3a9',
+    isAlumni: true,
   },
   {
     name: 'Jonathan Shi',
@@ -63,3 +64,11 @@ export const members: Member[] = [
     github: 'https://github.com/pguduguntla',
   },
 ];
+
+// .map((m) => ({
+//   ...m,
+//   isActive: m.isActive ?? true,
+//   linkedin: (m.linkedin as url) ?? undefined,
+//   github: (m.github as url) ?? undefined,
+//   website: (m.website as url) ?? undefined,
+// }));

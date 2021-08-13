@@ -422,7 +422,7 @@
           <Icon data={timesCircle} scale={2.5} style="margin-right: 0.25em" />
           No Longer Accepting Submissions.
         </p>
-        <p>Recruitment is at the beginning of each semester.<br />We hope to see you early Fall 2021!</p>
+        <p>Recruitment is at the beginning of each semester.<br />We hope to see you early Spring 2022!</p>
       </div>
     {/if}
   </div>

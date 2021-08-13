@@ -9,16 +9,13 @@ export interface Member {
   linkedin?: url;
   github?: url;
   website?: url;
+  isAlumni?: boolean;
 }
 
 export interface post {
   title: string;
   slug: string;
   html: string;
-}
-
-export interface post_detailed extends post {
-  description: string;
 }
 
 /* Forms */

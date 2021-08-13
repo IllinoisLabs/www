@@ -2,17 +2,21 @@
   import Header from '../components/Header.svelte';
   import MemberCard from '../components/about/MemberCard.svelte';
   import { members } from '../utils/data';
+
+  type panel = 'current' | 'Alumni';
+
+  let panel: panel = 'current';
 </script>
 
 <style>
-  #members {
+  .member-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     row-gap: 0.5em;
     margin: 1em var(--mg) 0;
   }
 
-  #members > * {
+  .member-grid > * {
     grid-column: span 2;
   }
 
@@ -38,30 +42,42 @@
     margin-bottom: 1em;
   }
 
+  h2 > span {
+    cursor: pointer;
+  }
+
+  h2 > span:first-child {
+    margin-right: 1em;
+  }
+
+  h2 > span:not(.active) {
+    opacity: 0.33;
+  }
+
   @media only screen and (min-width: 886px) {
     /* Triple Orphan */
 
-    #members > *:last-child:nth-child(4n - 1) {
+    .member-grid > *:last-child:nth-child(4n - 1) {
       grid-column: 6 / 8;
     }
 
-    #members > *:nth-last-child(2):nth-child(4n + 2) {
+    .member-grid > *:nth-last-child(2):nth-child(4n + 2) {
       grid-column: 4 / 6;
     }
 
-    #members > *:nth-last-child(3):nth-child(4n + 1) {
+    .member-grid > *:nth-last-child(3):nth-child(4n + 1) {
       grid-column: 2 / 4;
     }
   }
 
   @media only screen and (max-width: 885px) {
-    #members {
+    .member-grid {
       grid-template-columns: repeat(4, 1fr);
     }
 
     /* Single Orphan */
 
-    #members > * {
+    .member-grid > * {
       grid-column: span 2;
     }
   }
@@ -73,11 +89,11 @@
   }
 
   @media only screen and (max-width: 520px) {
-    #members {
+    .member-grid {
       grid-template-columns: 1fr;
     }
 
-    #members > * {
+    .member-grid > * {
       grid-column: span 1;
     }
   }
@@ -163,9 +179,12 @@
 </section>
 
 <section class="center">
-  <h2>Our Team</h2>
-  <article id="members">
-    {#each members as member}
+  <h2>
+    <span on:click={() => (panel = 'current')} class:active={panel === 'current'}>Our Team</span>
+    <span on:click={() => (panel = 'Alumni')} class:active={panel === 'Alumni'}>Alumni</span>
+  </h2>
+  <article class="member-grid" style="min-height: 500px">
+    {#each members.filter((m) => (panel === 'current' ? !m.isAlumni : m.isAlumni)) as member}
       <div>
         <MemberCard {member} />
       </div>

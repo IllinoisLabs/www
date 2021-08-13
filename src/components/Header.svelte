@@ -1,8 +1,8 @@
 <script lang="ts">
   export let title: string;
-  export let desc: string;
-  export let graphicSrc: string;
-  export let width: number;
+  export let desc: string | undefined = undefined;
+  export let graphicSrc: string | undefined = undefined;
+  export let width: number | undefined = undefined;
 </script>
 
 <style>
