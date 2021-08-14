@@ -47,6 +47,7 @@
 
   figure > img {
     width: 100%;
+    user-select: none;
   }
 
   @media only screen and (max-width: 760px) {

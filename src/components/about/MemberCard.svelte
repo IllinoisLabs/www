@@ -8,6 +8,8 @@
 
   // props
   export let member: Member;
+
+  let src = member.image || `https://picsum.photos/150?v=${member.name}`;
 </script>
 
 <style>
@@ -93,9 +95,7 @@
 </style>
 
 <div class="wrap">
-  <div class="image-wrapper">
-    <img src={member.image || `https://picsum.photos/150?v=${member.name}`} alt={member.name} draggable="false" />
-  </div>
+  <div class="image-wrapper"><img {src} alt={member.name} draggable="false" /></div>
   <div class="info-wrapper">
     <h3>{member.name}</h3>
     <ul>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Header from '../components/Header.svelte';
   import MemberCard from '../components/about/MemberCard.svelte';
-  import { members } from '../utils/data';
+  import { members } from '../utils/data/members';
 
   type panel = 'current' | 'Alumni';
 
