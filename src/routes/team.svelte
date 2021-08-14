@@ -184,11 +184,19 @@
     <span on:click={() => (panel = 'Alumni')} class:active={panel === 'Alumni'}>Alumni</span>
   </h2>
   <article class="member-grid" style="min-height: 500px">
-    {#each members.filter((m) => (panel === 'current' ? !m.isAlumni : m.isAlumni)) as member}
-      <div>
-        <MemberCard {member} />
-      </div>
-    {/each}
+    {#if panel === 'current'}
+      {#each members.filter((m) => !m.isAlumni) as member}
+        <div>
+          <MemberCard {member} />
+        </div>
+      {/each}
+    {:else}
+      {#each members.filter((m) => m.isAlumni) as member}
+        <div>
+          <MemberCard {member} />
+        </div>
+      {/each}
+    {/if}
   </article>
 </section>
 
