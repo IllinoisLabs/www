@@ -2,6 +2,8 @@
   import type { FormType } from '../utils/types';
   import { FormGuards } from '../utils/guards';
 
+  import { NEXT_SEMESTER } from '../utils/data/recruitment/index';
+
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { upload, exclamationTriangle, checkCircle, timesCircle, spinner, paperPlane } from 'svelte-awesome/icons';
 
@@ -422,7 +424,7 @@
           <Icon data={timesCircle} scale={2.5} style="margin-right: 0.25em" />
           No Longer Accepting Submissions.
         </p>
-        <p>Recruitment is at the beginning of each semester.<br />We hope to see you early Spring 2022!</p>
+        <p>Recruitment is at the beginning of each semester.<br />We hope to see you early {NEXT_SEMESTER}!</p>
       </div>
     {/if}
   </div>

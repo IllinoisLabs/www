@@ -1,69 +1,9 @@
 <script lang="ts">
   import Form from '../../components/Form.svelte';
   import Header from '../../components/Header.svelte';
+  import { applications } from '../../utils/data/recruitment';
 
-  import type {
-    FormType,
-    FormBlockInput,
-    FormBlockSelect,
-    FormBlockTextArea,
-    FormBlockUpload,
-  } from '../../utils/types';
-
-  import { generalQuestions, endingQuestions } from '../../utils/data/application';
-
-  const formData: FormType = {
-    isOpen: false,
-    formLabel: 'Software Developer Application',
-    formName: 'swe-app',
-    blocks: [
-      ...generalQuestions,
-      {
-        name: 'major',
-        label: 'Major',
-        required: true,
-        options: [
-          'Computer Science',
-          'Computer Engineering',
-          'Mathematics, Statistics, or Physics',
-          'Engineering',
-          'Other',
-        ],
-        allowMultiple: false,
-      } as FormBlockSelect,
-      {
-        name: 'languages',
-        label: 'What programming languages and frameworks are you proficient in?',
-        desc: 'Check all you are comfortable with',
-        required: true,
-        options: ['JavaScript', 'Python', 'C++', 'Java', 'Go', 'Other'],
-        allowMultiple: true,
-      } as FormBlockSelect,
-      {
-        name: 'specialization',
-        label: 'Do you have a specialization?',
-        desc:
-          'A specialization entails demonstrated and extensive experience. This is NOT a required question, being a generalist is perfectly fine!',
-        required: false,
-        options: [
-          'Not Applicable',
-          'Frontend Development',
-          'Backend Development',
-          'Data Science',
-          'Other (Security, Mobile, Firmware, etc)',
-        ],
-        allowMultiple: false,
-      } as FormBlockSelect,
-      {
-        name: 'process',
-        label: 'What type of engineering process do you prefer?',
-        required: true,
-        options: ['Moves fast, minimal process', 'Emphasizes industry best-practices, high quality code'],
-        allowMultiple: false,
-      } as FormBlockSelect,
-      ...generalQuestions,
-    ],
-  };
+  const { software: formData } = applications;
 </script>
 
 <style>

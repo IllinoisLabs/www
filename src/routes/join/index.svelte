@@ -1,10 +1,12 @@
 <script lang="ts">
   import Header from '../../components/Header.svelte';
 
+  import { NEXT_SEMESTER } from '../../utils/data/recruitment/index';
+
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { cog, sitemap } from 'svelte-awesome/icons';
 
-  const RECRUITING = false;
+  const RECRUITING = true;
 </script>
 
 <style>
@@ -111,24 +113,30 @@
   graphicSrc="/joinus.svg" />
 <section class="center">
   <h2>Open Positions</h2>
-  <article style="display: flex; justify-content: center; align-items: center; min-height: 20vh">
-    <p style="font-weight: 600; font-size: 24px; text-align:center; line-height: 1.5;">
-      Applications are accepted at the beginning of each semester.<br />We hope to see you early Fall 2021!
-    </p>
-  </article>
-  <h2>All Positions</h2>
+  {#if !RECRUITING}
+    <article style="display: flex; justify-content: center; align-items: center; min-height: 20vh">
+      <p style="font-weight: 600; font-size: 24px; text-align:center; line-height: 1.5;">
+        Applications are accepted at the beginning of each semester.<br />We hope to see you early
+        {NEXT_SEMESTER}!
+      </p>
+    </article>
+    <h2>All Positions</h2>
+  {/if}
+
   <article class="card-grid">
     <div>
       <img src="icons/software.svg" alt="" />
       <h3>Software Developer</h3>
       <p>Engineer ideas that bring product to life. Work with the end-to-end tech that powers our applications.</p>
-      <div class="button-wrapper"><a href="/join/software" class="button disabled">Apply</a></div>
+      <div class="button-wrapper"><a href="/join/software" class:disabled={!RECRUITING} class="button">Apply</a></div>
     </div>
     <div>
       <img src="icons/sitemap.svg" alt="" />
       <h3>UI/UX Designer</h3>
       <p>Design the look and feel of products by working with prototyping tools and conducting user research.</p>
-      <div class="button-wrapper"><a href="/join/design" class="button disabled">Apply</a></div>
+      <div class="button-wrapper">
+        <a href="/join/design" class:disabled={!RECRUITING} class="button disabled">Apply</a>
+      </div>
     </div>
   </article>
 </section>
