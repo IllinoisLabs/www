@@ -44,7 +44,7 @@ export const members: Member[] = [
     name: 'Leo Galindo',
     position: 'Software Developer',
     image: '/headshots/leo.jpg',
-    website: 'http://http://leonardogalindo.me/',
+    website: 'http://leonardogalindo.me/',
     linkedin: 'https://www.linkedin.com/in/leonardo-galindo-frias/',
     github: 'https://github.com/Leundai',
   },
