@@ -1,5 +1,5 @@
-export const CURRENT_SEMESTER = 'Fall 2021';
-export const NEXT_SEMESTER = 'Spring 2022';
+export const CURRENT_SEMESTER = 'Spring 2022';
+export const NEXT_SEMESTER = 'Fall 2022';
 
 import software from './roles/software';
 import design from './roles/design';

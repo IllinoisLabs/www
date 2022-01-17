@@ -1,7 +1,7 @@
 import type { FormType, FormBlockInput, FormBlockSelect, FormBlockTextArea, FormBlockUpload } from '../../../types';
 
 const formData: FormType = {
-  isOpen: false,
+  isOpen: true,
   formLabel: 'Software Developer Application',
   formName: 'swe-app',
   blocks: [
