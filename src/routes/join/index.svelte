@@ -6,7 +6,7 @@
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { cog, sitemap } from 'svelte-awesome/icons';
 
-  const RECRUITING = true;
+  const RECRUITING = false;
 </script>
 
 <style>

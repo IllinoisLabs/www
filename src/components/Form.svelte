@@ -17,12 +17,6 @@
     formStatus: status = 'inprogress',
     loading: boolean = false;
 
-  const encode = (data) => {
-    const toReturn = Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-    return toReturn;
-  };
   function handleSubmit(e) {
     e.preventDefault();
     loading = true;
@@ -30,7 +24,7 @@
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'multipart/form-data' },
-      body: encode({ 'form-name': formData.formName, ...formValues }),
+      body: new URLSearchParams({ 'form-name': formData.formName, ...formValues }).toString(),
     })
       .then(() => {
         formStatus = 'success';

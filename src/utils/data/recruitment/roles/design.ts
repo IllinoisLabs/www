@@ -1,7 +1,7 @@
 import type { FormType, FormBlockInput, FormBlockSelect, FormBlockTextArea, FormBlockUpload } from '../../../types';
 
 const formData: FormType = {
-  isOpen: true,
+  isOpen: false,
   formLabel: 'UI/UX Designer Application',
   formName: 'design-app',
   blocks: [
