@@ -23,6 +23,7 @@ export const members: Member[] = [
     image: '/headshots/gene.jpg',
     linkedin: 'https://linkedin.com/in/genewang0',
     github: 'https://github.com/gwang0136',
+    isAlumni: true,
   },
   {
     name: 'Neeraj Aggarwal',
@@ -39,6 +40,7 @@ export const members: Member[] = [
     image: '/headshots/jonathan.jpg',
     linkedin: 'https://www.linkedin.com/in/jonathan-shi-5219b3180/',
     github: 'https://github.com/jonathanshi568',
+    isAlumni: true,
   },
   {
     name: 'Leo Galindo',
